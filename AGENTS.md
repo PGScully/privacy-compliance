@@ -17,6 +17,7 @@ legislation/                           Original source legislation (not uploaded
   Europe/GDPR/                         GDPR text + source PDF
   Europe/AI Act/                       AI Act text + source PDF
   Europe/Data Act/                     Data Act text + source PDF
+  USA/California/                      CCPA statute and regulations text + source PDFs
 skills/
   privacy-skill/                       Self-contained, uploadable skill package
     SKILL.md                           Agent Skills entry point (routing, workflow, output)
@@ -41,6 +42,11 @@ skills/
         audit-checklist.md             GDPR/AI Act/Data Act audit procedures
         ai-act.md                      EU AI Act (2024/1689)
         data-act.md                    EU Data Act (2023/2854)
+      usa/                             California CCPA (statute + regulations)
+        README.md                      Orientation, scope and definitions
+        ccpa.md                        CCPA obligations
+        privacy-policy.md              Required CCPA disclosures
+        audit-checklist.md             CCPA audit procedures
     legislation/                       Copies of the text cited by the package
 ```
 

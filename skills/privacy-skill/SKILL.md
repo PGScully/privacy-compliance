@@ -1,6 +1,6 @@
 ---
 name: privacy-skill
-description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing requirements, designs, code or documentation at any lifecycle stage; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings, audit reports or policy drafts that cite the relevant section, article or APP clause.
+description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act, and the California CCPA and its regulations. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing requirements, designs, code or documentation at any lifecycle stage; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product, ad-tech and cloud features. Produces findings, audit reports or policy drafts that cite the relevant section, article or APP clause.
 license: MIT
 ---
 
@@ -34,6 +34,7 @@ review under each and report overlapping findings once, citing both.
 | **EU — GDPR (2016/679)** | Processing in the context of EU/EEA establishment, or offering goods/services to or monitoring people in the EU. | `references/eu/gdpr.md` | `legislation/Europe/GDPR/GDPR.txt` |
 | **EU — AI Act (2024/1689)** | Placing on the market, putting into service or using AI systems with EU effect, including non-EU providers. | `references/eu/ai-act.md` | `legislation/Europe/AI Act/EU AI Act.txt` |
 | **EU — Data Act (2023/2854)** | Connected products, related services, data sharing, cloud switching or unlawful governmental access with EU effect. | `references/eu/data-act.md` | `legislation/Europe/Data Act/EU Data Act.txt` |
+| **USA / California — CCPA + CCPA Regulations** | A for-profit business doing business in California that meets a threshold (revenue, 100,000+ consumers/households, or 50%+ revenue from selling/sharing), or a service provider/contractor/third party handling their data. | `references/usa/` | `legislation/USA/California/CCPA statute.txt`; `legislation/USA/California/CCPA regulations.txt` |
 
 Use the statute text to verify a citation when the point is contested or
 high-stakes. When in doubt about which regime applies, state the assumption.
@@ -97,8 +98,11 @@ counsel).
 | Incident response / breach runbooks | AU Part IIIC (s 26WE, 26WH, 26WK, 26WL); GDPR Art 33–34 |
 | Connected products / IoT / cloud | Data Act Art 3–6, 30–32; GDPR Art 6, 20 |
 | Public-body data requests | Data Act Art 14–18; GDPR Art 6(1)(e) |
-| Writing or updating a privacy policy | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `assets/privacy-policy-template.md` |
-| Auditing at any lifecycle stage (requirements, design, build, operation, change) | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `assets/audit-report-template.md` |
+| Selling/sharing data, ad tech, "Do Not Sell or Share" | CCPA §§ 1798.120, 1798.135; Regs §§ 7013, 7025–7026 |
+| Sensitive personal information | CCPA § 1798.121; Regs §§ 7014, 7027 |
+| Automated decisions / profiling / scoring | CCPA Regs §§ 7200, 7220–7222 (ADMT); § 7150 (risk assessment); AI Act Art 5/6; GDPR Art 22 |
+| Writing or updating a privacy policy | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `references/usa/privacy-policy.md`, `assets/privacy-policy-template.md` |
+| Auditing at any lifecycle stage (requirements, design, build, operation, change) | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `references/usa/audit-checklist.md`, `assets/audit-report-template.md` |
 
 ## 6. Task B — draft or update a privacy policy
 
@@ -136,16 +140,21 @@ Consult the jurisdiction requirement checklists while drafting:
 - EU — `references/eu/privacy-notice.md` (transparency in **Art 12**, content for
   data collected from the subject in **Art 13**, from other sources in **Art 14**,
   plus Art 8, 21, 22, 26, 27, 37 and AI Act Art 50).
+- USA / California — `references/usa/privacy-policy.md` (privacy policy and
+  Notice at Collection content, opt-out/limit/financial-incentive notices, and the
+  ADMT Pre-use Notice under Regs §§ 7011–7016, 7220).
 
-Where both apply, produce a combined or layered notice that satisfies both, with
-clearly separated jurisdiction sections where the wording differs.
+Where more than one applies, produce a combined or layered notice that satisfies
+all of them, with clearly separated jurisdiction sections where the wording
+differs.
 
 ### 6.3 Validate and report
 
 Return, after the draft:
 
 1. **Coverage check** — a table mapping each required element (APP 1.4(a)–(g);
-   GDPR Art 13(1)–(2) / Art 14) to the section of the draft that satisfies it.
+   GDPR Art 13(1)–(2) / Art 14; CCPA Regs § 7011(e) / § 7012(e)) to the section of
+   the draft that satisfies it.
 2. **Gaps and open questions** — every placeholder or assumed fact that must be
    confirmed before publishing.
 3. **Publication checklist** — dated and versioned, available free of charge and in
@@ -214,6 +223,9 @@ tested.
   Schedule 2, and conditional credit-reporting/code controls).
 - EU — `references/eu/audit-checklist.md` (GDPR principles, rights, security and
   transfers; AI Act; Data Act).
+- USA / California — `references/usa/audit-checklist.md` (CCPA collection limits,
+  notices, requests, contracts, security, and the cybersecurity-audit, risk-
+  assessment and ADMT controls).
 
 ### 7.4 Report
 
@@ -248,13 +260,20 @@ method and rating scales are in `references/audit.md`.
 - `references/eu/ai-act.md` — prohibitions, high-risk classification, requirements, transparency, GPAI.
 - `references/eu/data-act.md` — data access/sharing, cloud switching, government access.
 
+**USA / California** — see `references/usa/README.md` for orientation.
+- `references/usa/ccpa.md` — CCPA obligations: collection limits, rights, notices,
+  contracts, security, ADMT, cybersecurity audits, risk assessments, enforcement.
+- `references/usa/privacy-policy.md` — required CCPA disclosures and policy content.
+- `references/usa/audit-checklist.md` — CCPA control-by-control audit procedures.
+
 ## 9. Caveats
 
 - The bundled statutes are official texts: Australian Privacy Act 1988 compilation
-  No. 104 (4 June 2026); GDPR; AI Act; Data Act. Verify currency against the
-  official register before relying on a citation in a high-stakes context.
+  No. 104 (4 June 2026); GDPR; AI Act; Data Act; California CCPA statute and CCPA
+  Regulations (both effective 1 January 2026). Verify currency against the official
+  register before relying on a citation in a high-stakes context.
 - Each regime sits alongside others (e.g. Australian credit reporting and APP codes;
-  the ePrivacy Directive, DMA, DSA, NIS2; national Member State law). Note overlaps;
-  this skill is not exhaustive.
+  the ePrivacy Directive, DMA, DSA, NIS2; other US state privacy laws; national
+  Member State law). Note overlaps; this skill is not exhaustive.
 - This skill is portable across agents that support the Agent Skills `SKILL.md`
   format (Claude, Codex, and others).

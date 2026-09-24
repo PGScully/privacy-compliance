@@ -14,6 +14,7 @@ finding or required element to its provision.
 | European Union | GDPR — Regulation (EU) 2016/679 |
 | European Union | AI Act — Regulation (EU) 2024/1689 |
 | European Union | Data Act — Regulation (EU) 2023/2854 |
+| USA / California | CCPA (Civil Code §§ 1798.100–1798.199.100) and the CCPA Regulations (11 CCR §§ 7000–7304), both effective 1 January 2026 |
 
 ## Package contents
 
@@ -39,11 +40,18 @@ references/
     audit-checklist.md           GDPR/AI Act/Data Act audit procedures
     ai-act.md                    Prohibitions, high-risk classification, requirements, GPAI
     data-act.md                  Data access/sharing, cloud switching, government access
+  usa/
+    README.md                    CCPA orientation, scope and key definitions
+    ccpa.md                      CCPA obligations (rights, notices, contracts, ADMT, audits)
+    privacy-policy.md            Required CCPA disclosures and policy content
+    audit-checklist.md           CCPA audit procedures
 legislation/                     Copies of the statute text cited by this package
   Australia/Privacy Act 1988.txt
   Europe/GDPR/GDPR.txt
   Europe/AI Act/EU AI Act.txt
   Europe/Data Act/EU Data Act.txt
+  USA/California/CCPA statute.txt
+  USA/California/CCPA regulations.txt
 ```
 
 The `legislation/` files are copies included so the package is self-contained and
