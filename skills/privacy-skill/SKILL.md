@@ -1,20 +1,22 @@
 ---
 name: privacy-skill
-description: Review code, designs, data flows and policies for privacy and data-protection compliance across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act - and draft or update privacy policies and privacy notices. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings or policy drafts that cite the relevant section, article or APP clause.
+description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing code and documentation for privacy compliance; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings, audit reports or policy drafts that cite the relevant section, article or APP clause.
 license: MIT
 ---
 
-# Privacy review and policy drafting
+# Privacy review, audit and policy drafting
 
-Work against the privacy legislation bundled in `legislation/` to do one of two
+Work against the privacy legislation bundled in `legislation/` to do one of three
 things:
 
 - **Review** software, designs, data flows and written policies, and flag issues
   with precise citations (sections 1–5).
 - **Draft or update a privacy policy / privacy notice**, with every required
   element traced to its provision (section 6).
+- **Audit** code and documentation against a defined scope and criteria, producing
+  a rated control matrix and a report (section 7).
 
-Both modes start by choosing the jurisdiction(s) below.
+Every mode starts by choosing the jurisdiction(s) below.
 
 > This skill supports engineering, design and documentation work, not legal
 > advice. Flag uncertainty and recommend qualified legal advice for novel,
@@ -95,6 +97,7 @@ counsel).
 | Connected products / IoT / cloud | Data Act Art 3–6, 30–32; GDPR Art 6, 20 |
 | Public-body data requests | Data Act Art 14–18; GDPR Art 6(1)(e) |
 | Writing or updating a privacy policy | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `assets/privacy-policy-template.md` |
+| Auditing a codebase or documentation | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `assets/audit-report-template.md` |
 
 ## 6. Task B — draft or update a privacy policy
 
@@ -148,26 +151,73 @@ Return, after the draft:
    an appropriate form (AU APP 1.5–1.6), reachable from every collection point, and
    consistent with what the system actually does.
 
-## 7. Bundled references
+## 7. Task C — audit code and documentation
+
+Use this when asked to audit a codebase or documentation for privacy compliance.
+An audit is a structured, evidence-based assessment against defined criteria that
+produces a rated control matrix and a report — distinct from the ad-hoc review in
+Task A.
+
+### 7.1 Plan
+
+Record the objective, **scope** (repositories, services, environments,
+documentation, period) and explicit **exclusions**; the **criteria** (exact
+legislation and version); the approach (documentation and design audit, evidence-
+based); and where legal sign-off is required. Prioritise high-risk processing.
+
+### 7.2 Collect evidence
+
+Enumerate evidence before concluding: data schemas and migrations, collection
+points, consent configuration, IAM and encryption settings, retention/deletion jobs,
+subprocessor and transfer documents, rights workflows, logging, breach runbooks and
+vendor contracts. Record **where** each item is (file:line, config path, document
+section). The full evidence map is in `references/audit.md` (section 2).
+
+### 7.3 Test every control
+
+Work through the jurisdiction checklist control by control and **rate each one**
+(Conforms / Partially conforms / Does not conform / Not applicable / Not tested).
+Inspect, walk through, re-perform in a test environment where safe, and sample where
+volume requires it.
+
+- Australia — `references/australia/audit-checklist.md` (APP 1–13, Part IIIC,
+  Schedule 2, and conditional credit-reporting/code controls).
+- EU — `references/eu/audit-checklist.md` (GDPR principles, rights, security and
+  transfers; AI Act; Data Act).
+
+### 7.4 Report
+
+Produce findings in the audit finding format (criteria, condition, evidence, cause,
+effect, recommendation, management response), a **control matrix** with a rating per
+control, an **evidence index**, and an **overall opinion** (Reasonable assurance /
+Qualified / Adverse / Insufficient evidence). Start from
+`assets/audit-report-template.md`; the method and rating scales are in
+`references/audit.md`.
+
+## 8. Bundled references
+
+**Method and templates**
+- `references/audit.md` — audit methodology, ratings, findings and report structure.
+- `assets/audit-report-template.md` — fill-in audit report.
+- `assets/privacy-policy-template.md` — fill-in policy template mapped to APP 1.4
+  and GDPR Art 13/14.
 
 **Australia** — see `references/australia/README.md` for orientation.
 - `scope.md` — coverage, definitions, exemptions and permitted situations.
 - `apps.md` — APP 1 to APP 13 clause-by-clause checklist.
 - `privacy-policy.md` — APP privacy policy requirements and drafting checklist.
+- `audit-checklist.md` — control-by-control audit procedures and evidence map.
 - `breach-notification.md` — Part IIIC eligible data breaches.
 - `statutory-tort.md` — Schedule 2 serious invasions of privacy.
 
 **European Union**
 - `references/eu/gdpr.md` — principles, lawful bases, rights, obligations, transfers, fines.
 - `references/eu/privacy-notice.md` — GDPR Art 12–14 notice content and checklist.
+- `references/eu/audit-checklist.md` — GDPR/AI Act/Data Act audit procedures.
 - `references/eu/ai-act.md` — prohibitions, high-risk classification, requirements, transparency, GPAI.
 - `references/eu/data-act.md` — data access/sharing, cloud switching, government access.
 
-**Assets**
-- `assets/privacy-policy-template.md` — fill-in template mapped to APP 1.4 and
-  GDPR Art 13/14.
-
-## 8. Caveats
+## 9. Caveats
 
 - The bundled statutes are official texts: Australian Privacy Act 1988 compilation
   No. 104 (4 June 2026); GDPR; AI Act; Data Act. Verify currency against the

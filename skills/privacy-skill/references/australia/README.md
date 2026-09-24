@@ -11,9 +11,12 @@ Read the references in this order:
    health situations.
 2. **`apps.md`** — the 13 Australian Privacy Principles (Schedule 1), with the
    engineering signals and common failures for each.
-3. **`breach-notification.md`** — Part IIIC: eligible data breaches, assessment
+3. **`privacy-policy.md`** — APP privacy policy requirements (APP 1.3–1.6, 1.4
+   contents) and a drafting checklist.
+4. **`audit-checklist.md`** — control-by-control audit procedures and evidence map.
+5. **`breach-notification.md`** — Part IIIC: eligible data breaches, assessment
    timeframes and notification duties.
-4. **`statutory-tort.md`** — Schedule 2: the cause of action for serious invasions
+6. **`statutory-tort.md`** — Schedule 2: the cause of action for serious invasions
    of privacy.
 
 Quick orientation:

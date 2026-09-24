@@ -2,8 +2,9 @@
 
 A privacy skill for coding assistants, derived from privacy legislation. The
 skill reviews software, designs, data flows and policies for privacy and
-data-protection compliance, flagging issues with citations to the relevant
-provision, and drafts or updates privacy policies and privacy notices.
+data-protection compliance, flags issues with citations to the relevant provision,
+audits code and documentation against a defined scope, and drafts or updates privacy
+policies and privacy notices.
 
 ## Skill Requirements
 
@@ -29,17 +30,21 @@ skills/
     LICENSE
     assets/
       privacy-policy-template.md  Fill-in template (APP 1.4 / GDPR Art 13-14)
+      audit-report-template.md    Fill-in audit report template
     references/
+      audit.md                    Audit methodology, ratings and reporting
       australia/                 Australian Privacy Act 1988
         README.md
         scope.md
         apps.md
         privacy-policy.md        APP privacy policy requirements
+        audit-checklist.md       APP audit procedures and evidence map
         breach-notification.md
         statutory-tort.md
       eu/
         gdpr.md                  GDPR (2016/679)
         privacy-notice.md        GDPR Art 12-14 notice content
+        audit-checklist.md       GDPR/AI Act/Data Act audit procedures
         ai-act.md                AI Act (2024/1689)
         data-act.md              Data Act (2023/2854)
     legislation/                 Copies of the text cited by the package
@@ -62,6 +67,9 @@ The package covers:
   with a citation to the specific provision (for example `APP 11.1`,
   `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
   `Data Act Art 4(12)`).
+- **Audit** — assess code and documentation against a defined scope and criteria,
+  rating every control and producing a report with a control matrix, evidence index
+  and an overall opinion.
 - **Draft a privacy policy** — create or update a policy/notice, with every required
   element traced to its provision (AU **APP 1.4**; EU **GDPR Art 13/14**).
 

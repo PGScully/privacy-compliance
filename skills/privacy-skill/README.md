@@ -2,9 +2,9 @@
 
 A portable [Agent Skills](https://agentskills.io/specification) package that helps
 coding assistants **review** software, designs, data flows and policies for privacy
-and data-protection compliance — flagging issues with precise citations to the
-relevant provision — and **draft or update privacy policies and privacy notices**,
-tracing every required element to its provision.
+and data-protection compliance, **audit** code and documentation against a defined
+scope, and **draft or update privacy policies and privacy notices** — tracing every
+finding or required element to its provision.
 
 ## Coverage
 
@@ -22,17 +22,21 @@ SKILL.md                         Entry point: jurisdiction routing, workflows, o
 LICENSE
 assets/
   privacy-policy-template.md     Fill-in policy template mapped to APP 1.4 / GDPR Art 13-14
+  audit-report-template.md       Fill-in audit report (scope, findings, control matrix, opinion)
 references/
+  audit.md                       Audit methodology: planning, evidence, ratings, reporting
   australia/
     README.md                    Orientation and citation summary
     scope.md                     Coverage, definitions, exemptions, permitted situations
     apps.md                      APP 1-13 clause-by-clause checklist
     privacy-policy.md            APP privacy policy requirements and drafting checklist
+    audit-checklist.md           APP audit procedures and evidence map
     breach-notification.md       Part IIIC notifiable data breaches
     statutory-tort.md            Schedule 2 serious invasions of privacy
   eu/
     gdpr.md                      Principles, lawful bases, rights, obligations, transfers, fines
     privacy-notice.md            GDPR Art 12-14 notice content and checklist
+    audit-checklist.md           GDPR/AI Act/Data Act audit procedures
     ai-act.md                    Prohibitions, high-risk classification, requirements, GPAI
     data-act.md                  Data access/sharing, cloud switching, government access
 legislation/                     Copies of the statute text cited by this package
@@ -81,6 +85,17 @@ will gather the required inputs, draft from `assets/privacy-policy-template.md`,
 and return the document plus a coverage check and a list of open questions. It
 targets the Australian **APP 1.4** contents and the **GDPR Art 13/14** information
 requirements (and merges them where both apply).
+
+### Audit code and documentation
+
+Ask the agent to audit a codebase or documentation for privacy compliance. The
+skill plans the audit (scope, criteria, exclusions), collects evidence, tests every
+control in the jurisdiction checklist and rates it (Conforms / Partially conforms /
+Does not conform / Not applicable / Not tested), then produces a report with a
+control matrix, evidence index and an overall opinion. Start from
+`assets/audit-report-template.md`; the method is in `references/audit.md` and the
+procedures in `references/australia/audit-checklist.md` and
+`references/eu/audit-checklist.md`.
 
 ## Keeping legislation in sync
 

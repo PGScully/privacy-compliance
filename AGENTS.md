@@ -24,17 +24,21 @@ skills/
     LICENSE
     assets/
       privacy-policy-template.md       Fill-in policy template (APP 1.4 / GDPR Art 13-14)
-    references/                        Per-jurisdiction review references
+      audit-report-template.md         Fill-in audit report
+    references/                        Review, audit and drafting references
+      audit.md                         Audit methodology, ratings and reporting
       australia/                       AU Privacy Act 1988
         README.md                      Orientation and citation summary
         scope.md                       Coverage, definitions, exemptions
         apps.md                        APP 1-13 clause-by-clause checklist
         privacy-policy.md              APP privacy policy requirements
+        audit-checklist.md             APP audit procedures and evidence map
         breach-notification.md         Part IIIC notifiable data breaches
         statutory-tort.md              Schedule 2 serious invasions of privacy
       eu/
         gdpr.md                        EU GDPR (2016/679)
         privacy-notice.md              GDPR Art 12-14 notice content
+        audit-checklist.md             GDPR/AI Act/Data Act audit procedures
         ai-act.md                      EU AI Act (2024/1689)
         data-act.md                    EU Data Act (2023/2854)
     legislation/                       Copies of the text cited by the package
@@ -70,7 +74,8 @@ sub-folders for each jurisdiction.
   it works across agents (Claude, Codex, Deepseek, pi, ...).
 - Per-jurisdiction detail lives under `skills/privacy-skill/references/<jurisdiction>/`.
 - The skill routes by jurisdiction and cites the exact provision for every finding.
-- The skill has two capabilities: **review** (flag issues) and **draft a privacy
+- The skill has three capabilities: **review** (flag issues), **audit** (rate every
+  control against a defined scope and produce a report), and **draft a privacy
   policy/notice** (targeting AU APP 1.4 and EU GDPR Art 13/14, merged where needed).
 - Keep all paths inside a package **relative to the package root**, so the package
   stays portable when uploaded on its own.
