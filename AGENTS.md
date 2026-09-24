@@ -8,7 +8,7 @@ lifecycle: requirements gathering, implementation, and post-deployment operation
 
 ## Repository layout
 
-```
+```pre
 README.md                              Project overview and requirements
 legislation/                           Source legislation, one sub-folder per jurisdiction
   Australia/Privacy Act 1988.txt       Australian Privacy Act (copied statute text)
@@ -24,6 +24,11 @@ legislation/                           Source legislation, one sub-folder per ju
 
 Place the text of the relevant legislation in a sub-folder of `legislation/` named
 after the jurisdiction (e.g. `legislation/Australia/`).
+
+## Outputs
+
+A skill suitable for use by multiple agents, e.g. Claude, Codex, Deepseek, etc, with
+sub-folders for each jurisdiction.
 
 ## Notes
 
