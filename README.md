@@ -3,7 +3,7 @@
 A privacy skill for coding assistants, derived from privacy legislation. The
 skill reviews software, designs, data flows and policies for privacy and
 data-protection compliance, flagging issues with citations to the relevant
-provision.
+provision, and drafts or updates privacy policies and privacy notices.
 
 ## Skill Requirements
 
@@ -27,15 +27,19 @@ skills/
     SKILL.md                     Agent Skills entry point
     README.md                    Package documentation
     LICENSE
+    assets/
+      privacy-policy-template.md  Fill-in template (APP 1.4 / GDPR Art 13-14)
     references/
       australia/                 Australian Privacy Act 1988
         README.md
         scope.md
         apps.md
+        privacy-policy.md        APP privacy policy requirements
         breach-notification.md
         statutory-tort.md
       eu/
         gdpr.md                  GDPR (2016/679)
+        privacy-notice.md        GDPR Art 12-14 notice content
         ai-act.md                AI Act (2024/1689)
         data-act.md              Data Act (2023/2854)
     legislation/                 Copies of the text cited by the package
@@ -52,9 +56,14 @@ The package covers:
 - European Union — [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
 - European Union — [Data Act](https://eur-lex.europa.eu/eli/reg/2023/2854/oj)
 
-Every finding the skill produces cites the specific provision (for example
-`APP 11.1`, `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
-`Data Act Art 4(12)`).
+## Capabilities
+
+- **Review** — flag privacy issues in code, designs, data flows and policies, each
+  with a citation to the specific provision (for example `APP 11.1`,
+  `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
+  `Data Act Art 4(12)`).
+- **Draft a privacy policy** — create or update a policy/notice, with every required
+  element traced to its provision (AU **APP 1.4**; EU **GDPR Art 13/14**).
 
 ## Using the skill
 

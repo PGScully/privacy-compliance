@@ -22,15 +22,19 @@ skills/
     SKILL.md                           Agent Skills entry point (routing, workflow, output)
     README.md                          Package documentation and install/use
     LICENSE
+    assets/
+      privacy-policy-template.md       Fill-in policy template (APP 1.4 / GDPR Art 13-14)
     references/                        Per-jurisdiction review references
       australia/                       AU Privacy Act 1988
         README.md                      Orientation and citation summary
         scope.md                       Coverage, definitions, exemptions
         apps.md                        APP 1-13 clause-by-clause checklist
+        privacy-policy.md              APP privacy policy requirements
         breach-notification.md         Part IIIC notifiable data breaches
         statutory-tort.md              Schedule 2 serious invasions of privacy
       eu/
         gdpr.md                        EU GDPR (2016/679)
+        privacy-notice.md              GDPR Art 12-14 notice content
         ai-act.md                      EU AI Act (2024/1689)
         data-act.md                    EU Data Act (2023/2854)
     legislation/                       Copies of the text cited by the package
@@ -66,6 +70,8 @@ sub-folders for each jurisdiction.
   it works across agents (Claude, Codex, Deepseek, pi, ...).
 - Per-jurisdiction detail lives under `skills/privacy-skill/references/<jurisdiction>/`.
 - The skill routes by jurisdiction and cites the exact provision for every finding.
+- The skill has two capabilities: **review** (flag issues) and **draft a privacy
+  policy/notice** (targeting AU APP 1.4 and EU GDPR Art 13/14, merged where needed).
 - Keep all paths inside a package **relative to the package root**, so the package
   stays portable when uploaded on its own.
 
@@ -85,6 +91,9 @@ then copy the `.txt` into the package's `legislation/`.
 
 - No build system, package manifest, or tests currently exist — the repo is
   documentation/legislation content plus the skill files.
+- When adding a capability, keep the drafting/validation instructions in `SKILL.md`
+  and the required content in the jurisdiction references; keep reusable fill-in
+  documents under `assets/`.
 - When adding skill content, cite legislation in the native form: Australian
   `Act name YYYY s <section>` / `APP N.N`; EU `Regulation name Art N`.
 - Keep the jurisdiction sub-folder naming consistent: `legislation/<Region or

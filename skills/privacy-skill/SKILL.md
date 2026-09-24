@@ -1,18 +1,24 @@
 ---
 name: privacy-skill
-description: Review code, designs, data flows and policies for privacy and data-protection compliance across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; building privacy notices, consent, access or correction flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings that each cite the relevant section, article or APP clause.
+description: Review code, designs, data flows and policies for privacy and data-protection compliance across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act - and draft or update privacy policies and privacy notices. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings or policy drafts that cite the relevant section, article or APP clause.
 license: MIT
 ---
 
-# Privacy review
+# Privacy review and policy drafting
 
-Review software, designs, data flows and written policies against the privacy
-legislation bundled in `legislation/`, and flag issues with precise citations to
-the provision relied on.
+Work against the privacy legislation bundled in `legislation/` to do one of two
+things:
 
-> This skill supports engineering and design review, not legal advice. Flag
-> uncertainty and recommend qualified legal advice for novel, high-risk or
-> disputed questions.
+- **Review** software, designs, data flows and written policies, and flag issues
+  with precise citations (sections 1–5).
+- **Draft or update a privacy policy / privacy notice**, with every required
+  element traced to its provision (section 6).
+
+Both modes start by choosing the jurisdiction(s) below.
+
+> This skill supports engineering, design and documentation work, not legal
+> advice. Flag uncertainty and recommend qualified legal advice for novel,
+> high-risk or disputed questions.
 
 ## 1. Choose the jurisdiction(s)
 
@@ -29,7 +35,7 @@ review under each and report overlapping findings once, citing both.
 Use the statute text to verify a citation when the point is contested or
 high-stakes. When in doubt about which regime applies, state the assumption.
 
-## 2. Workflow
+## 2. Task A — review workflow
 
 Work through these steps in order. Do not skip step 1 — most false positives come
 from applying an obligation that does not apply.
@@ -88,21 +94,80 @@ counsel).
 | Incident response / breach runbooks | AU Part IIIC (s 26WE, 26WH, 26WK, 26WL); GDPR Art 33–34 |
 | Connected products / IoT / cloud | Data Act Art 3–6, 30–32; GDPR Art 6, 20 |
 | Public-body data requests | Data Act Art 14–18; GDPR Art 6(1)(e) |
+| Writing or updating a privacy policy | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `assets/privacy-policy-template.md` |
 
-## 6. Bundled references
+## 6. Task B — draft or update a privacy policy
+
+Use this when asked to create or update a privacy policy or privacy notice. The
+output is a drafted document plus a coverage check.
+
+### 6.1 Gather the inputs
+
+Ask for, or infer from the repository and mark as assumed, the following. Do not
+invent facts — record unknowns as open questions.
+
+- Entity: legal name, contact details, DPO (if any), EU representative or joint
+  controllers (if any); entity type and jurisdictions in scope.
+- Data: categories of personal information, and separately sensitive/
+  special-category data.
+- Collection: sources (direct, third parties, automatic) and means.
+- Purposes and the **legal basis** for each (EU Art 6; and whether reliance is on
+  consent or legitimate interests).
+- Recipients and categories of recipients.
+- Overseas disclosures/transfers: countries and safeguards.
+- Retention periods or the criteria used to determine them.
+- Marketing, profiling and automated decisions.
+- Access, correction, complaint and opt-out mechanisms.
+
+### 6.2 Draft
+
+Start from `assets/privacy-policy-template.md` and fill it in. Keep it concise,
+plain-language and up to date (AU APP 1.3; EU Art 12). Delete inapplicable
+sections and remove the annotations before returning the final text.
+
+Consult the jurisdiction requirement checklists while drafting:
+
+- Australia — `references/australia/privacy-policy.md` (required contents in
+  **APP 1.4**, collection-notice matters in **APP 5.2**, cross-border in **APP 8**).
+- EU — `references/eu/privacy-notice.md` (transparency in **Art 12**, content for
+  data collected from the subject in **Art 13**, from other sources in **Art 14**,
+  plus Art 8, 21, 22, 26, 27, 37 and AI Act Art 50).
+
+Where both apply, produce a combined or layered notice that satisfies both, with
+clearly separated jurisdiction sections where the wording differs.
+
+### 6.3 Validate and report
+
+Return, after the draft:
+
+1. **Coverage check** — a table mapping each required element (APP 1.4(a)–(g);
+   GDPR Art 13(1)–(2) / Art 14) to the section of the draft that satisfies it.
+2. **Gaps and open questions** — every placeholder or assumed fact that must be
+   confirmed before publishing.
+3. **Publication checklist** — dated and versioned, available free of charge and in
+   an appropriate form (AU APP 1.5–1.6), reachable from every collection point, and
+   consistent with what the system actually does.
+
+## 7. Bundled references
 
 **Australia** — see `references/australia/README.md` for orientation.
 - `scope.md` — coverage, definitions, exemptions and permitted situations.
 - `apps.md` — APP 1 to APP 13 clause-by-clause checklist.
+- `privacy-policy.md` — APP privacy policy requirements and drafting checklist.
 - `breach-notification.md` — Part IIIC eligible data breaches.
 - `statutory-tort.md` — Schedule 2 serious invasions of privacy.
 
 **European Union**
 - `references/eu/gdpr.md` — principles, lawful bases, rights, obligations, transfers, fines.
+- `references/eu/privacy-notice.md` — GDPR Art 12–14 notice content and checklist.
 - `references/eu/ai-act.md` — prohibitions, high-risk classification, requirements, transparency, GPAI.
 - `references/eu/data-act.md` — data access/sharing, cloud switching, government access.
 
-## 7. Caveats
+**Assets**
+- `assets/privacy-policy-template.md` — fill-in template mapped to APP 1.4 and
+  GDPR Art 13/14.
+
+## 8. Caveats
 
 - The bundled statutes are official texts: Australian Privacy Act 1988 compilation
   No. 104 (4 June 2026); GDPR; AI Act; Data Act. Verify currency against the

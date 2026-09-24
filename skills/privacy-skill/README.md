@@ -1,9 +1,10 @@
 # privacy-skill
 
 A portable [Agent Skills](https://agentskills.io/specification) package that helps
-coding assistants review software, designs, data flows and policies for privacy and
-data-protection compliance, and flag issues with precise citations to the relevant
-provision.
+coding assistants **review** software, designs, data flows and policies for privacy
+and data-protection compliance — flagging issues with precise citations to the
+relevant provision — and **draft or update privacy policies and privacy notices**,
+tracing every required element to its provision.
 
 ## Coverage
 
@@ -17,17 +18,21 @@ provision.
 ## Package contents
 
 ```
-SKILL.md                         Entry point: jurisdiction routing, workflow, output format
+SKILL.md                         Entry point: jurisdiction routing, workflows, output format
 LICENSE
+assets/
+  privacy-policy-template.md     Fill-in policy template mapped to APP 1.4 / GDPR Art 13-14
 references/
   australia/
     README.md                    Orientation and citation summary
     scope.md                     Coverage, definitions, exemptions, permitted situations
     apps.md                      APP 1-13 clause-by-clause checklist
+    privacy-policy.md            APP privacy policy requirements and drafting checklist
     breach-notification.md       Part IIIC notifiable data breaches
     statutory-tort.md            Schedule 2 serious invasions of privacy
   eu/
     gdpr.md                      Principles, lawful bases, rights, obligations, transfers, fines
+    privacy-notice.md            GDPR Art 12-14 notice content and checklist
     ai-act.md                    Prohibitions, high-risk classification, requirements, GPAI
     data-act.md                  Data access/sharing, cloud switching, government access
 legislation/                     Copies of the statute text cited by this package
@@ -56,6 +61,8 @@ Once discovered, the skill is selectable automatically and/or invokable as
 
 ## Use
 
+### Review
+
 Ask the agent to review a change, design, data flow or policy for privacy issues.
 The skill will:
 
@@ -66,6 +73,14 @@ The skill will:
 5. report findings, each citing the exact provision (for example `APP 11.1`,
    `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
    `Data Act Art 4(12)`).
+
+### Draft a privacy policy
+
+Ask the agent to create or update a privacy policy or privacy notice. The skill
+will gather the required inputs, draft from `assets/privacy-policy-template.md`,
+and return the document plus a coverage check and a list of open questions. It
+targets the Australian **APP 1.4** contents and the **GDPR Art 13/14** information
+requirements (and merges them where both apply).
 
 ## Keeping legislation in sync
 
