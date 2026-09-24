@@ -8,11 +8,37 @@ lifecycle: requirements gathering, implementation, and post-deployment operation
 
 ## Repository layout
 
-```pre
-README.md                              Project overview and requirements
-legislation/                           Source legislation, one sub-folder per jurisdiction
-  Australia/Privacy Act 1988.txt       Australian Privacy Act (copied statute text)
 ```
+README.md                              Project overview and requirements
+AGENTS.md                              Agent instructions for this repo
+.pi/settings.json                      Registers skills/ for pi discovery
+legislation/                           Original source legislation (not uploaded)
+  Australia/Privacy Act 1988.txt       Australian statute text
+  Europe/GDPR/                         GDPR text + source PDF
+  Europe/AI Act/                       AI Act text + source PDF
+  Europe/Data Act/                     Data Act text + source PDF
+skills/
+  privacy-skill/                       Self-contained, uploadable skill package
+    SKILL.md                           Agent Skills entry point (routing, workflow, output)
+    README.md                          Package documentation and install/use
+    LICENSE
+    references/                        Per-jurisdiction review references
+      australia/                       AU Privacy Act 1988
+        README.md                      Orientation and citation summary
+        scope.md                       Coverage, definitions, exemptions
+        apps.md                        APP 1-13 clause-by-clause checklist
+        breach-notification.md         Part IIIC notifiable data breaches
+        statutory-tort.md              Schedule 2 serious invasions of privacy
+      eu/
+        gdpr.md                        EU GDPR (2016/679)
+        ai-act.md                      EU AI Act (2024/1689)
+        data-act.md                    EU Data Act (2023/2854)
+    legislation/                       Copies of the text cited by the package
+```
+
+The top-level `legislation/` directory holds the original source files and is **not**
+part of any uploaded package. Each package keeps copies of the relevant text so it
+stays self-contained.
 
 ## Key requirements (from README)
 
@@ -22,17 +48,46 @@ legislation/                           Source legislation, one sub-folder per ju
 
 ## Adding legislation
 
-Place the text of the relevant legislation in a sub-folder of `legislation/` named
-after the jurisdiction (e.g. `legislation/Australia/`).
+Place the original text in the top-level `legislation/<Jurisdiction>/`, then copy the
+relevant file(s) into the package at
+`skills/privacy-skill/legislation/<Jurisdiction>/`, add a matching reference under
+`skills/privacy-skill/references/<jurisdiction>/`, and link it from `SKILL.md`.
+Keep the top-level `legislation/` as the authoritative source; the package only holds
+copies of what it cites.
 
 ## Outputs
 
 A skill suitable for use by multiple agents, e.g. Claude, Codex, Deepseek, etc, with
 sub-folders for each jurisdiction.
 
+- Each skill is packaged in its own self-contained directory under `skills/`, ready
+  to upload to a skills repository as-is.
+- Entry point is `skills/privacy-skill/SKILL.md`, written to the Agent Skills spec so
+  it works across agents (Claude, Codex, Deepseek, pi, ...).
+- Per-jurisdiction detail lives under `skills/privacy-skill/references/<jurisdiction>/`.
+- The skill routes by jurisdiction and cites the exact provision for every finding.
+- Keep all paths inside a package **relative to the package root**, so the package
+  stays portable when uploaded on its own.
+
+## Building the EU statute text
+
+The EU PDFs were extracted to plain text with `pdftotext -layout`, e.g.:
+
+```sh
+pdftotext -layout "legislation/Europe/GDPR/CELEX_32016R0679_EN_TXT.pdf" \
+  "legislation/Europe/GDPR/GDPR.txt"
+```
+
+Keep the extracted `.txt` alongside the source PDF in the top-level `legislation/`,
+then copy the `.txt` into the package's `legislation/`.
+
 ## Notes
 
 - No build system, package manifest, or tests currently exist — the repo is
-  documentation/legislation content plus whatever skill files are added later.
-- When adding skill content, cite legislation as `Act name YYYY s <section>` so
-  references stay checkable against the text in `legislation/`.
+  documentation/legislation content plus the skill files.
+- When adding skill content, cite legislation in the native form: Australian
+  `Act name YYYY s <section>` / `APP N.N`; EU `Regulation name Art N`.
+- Keep the jurisdiction sub-folder naming consistent: `legislation/<Region or
+  Country>/...` and `references/<jurisdiction>/...`.
+- Do not add files that reference paths outside the package; a package must work
+  when copied out of this repository on its own.
