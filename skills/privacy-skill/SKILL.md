@@ -6,8 +6,7 @@ license: MIT
 
 # Privacy review, audit and policy drafting
 
-Work against the privacy legislation bundled in `legislation/` to do one of three
-things:
+Work against the privacy legislation below to do one of three things:
 
 - **Review** software, designs, data flows and written policies, and flag issues
   with precise citations (sections 1–5).
@@ -28,15 +27,17 @@ Every mode starts by choosing the jurisdiction(s) below.
 Determine which regimes apply before reviewing anything. If more than one applies,
 review under each and report overlapping findings once, citing both.
 
-| Regime | Applies when | Reference | Statute text |
+| Regime | Applies when | Reference | Official text |
 |---|---|---|---|
-| **Australia — Privacy Act 1988 (Cth)** | An APP entity (agency or organisation) with an Australian link, or a file number recipient / credit reporting body. | `references/australia/` | `legislation/Australia/Privacy Act 1988.txt` |
-| **EU — GDPR (2016/679)** | Processing in the context of EU/EEA establishment, or offering goods/services to or monitoring people in the EU. | `references/eu/gdpr.md` | `legislation/Europe/GDPR/GDPR.txt` |
-| **EU — AI Act (2024/1689)** | Placing on the market, putting into service or using AI systems with EU effect, including non-EU providers. | `references/eu/ai-act.md` | `legislation/Europe/AI Act/EU AI Act.txt` |
-| **EU — Data Act (2023/2854)** | Connected products, related services, data sharing, cloud switching or unlawful governmental access with EU effect. | `references/eu/data-act.md` | `legislation/Europe/Data Act/EU Data Act.txt` |
-| **USA / California — CCPA + CCPA Regulations** | A for-profit business doing business in California that meets a threshold (revenue, 100,000+ consumers/households, or 50%+ revenue from selling/sharing), or a service provider/contractor/third party handling their data. | `references/usa/` | `legislation/USA/California/CCPA statute.txt`; `legislation/USA/California/CCPA regulations.txt` |
+| **Australia — Privacy Act 1988 (Cth)** | An APP entity (agency or organisation) with an Australian link, or a file number recipient / credit reporting body. | `references/australia/` | [legislation.gov.au](https://www.legislation.gov.au/C2004A03712/latest/text) |
+| **EU — GDPR (2016/679)** | Processing in the context of EU/EEA establishment, or offering goods/services to or monitoring people in the EU. | `references/eu/gdpr.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj) |
+| **EU — AI Act (2024/1689)** | Placing on the market, putting into service or using AI systems with EU effect, including non-EU providers. | `references/eu/ai-act.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) |
+| **EU — Data Act (2023/2854)** | Connected products, related services, data sharing, cloud switching or unlawful governmental access with EU effect. | `references/eu/data-act.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/2854/oj) |
+| **USA / California — CCPA + CCPA Regulations** | A for-profit business doing business in California that meets a threshold (revenue, 100,000+ consumers/households, or 50%+ revenue from selling/sharing), or a service provider/contractor/third party handling their data. | `references/usa/` | [CCPA statute](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.); [CCPA Regulations](https://cppa.ca.gov/regulations/) |
 
-Use the statute text to verify a citation when the point is contested or
+The references summarise each instrument and cite the exact provisions. **This
+package does not ship the full statutes** (to keep it small). Use the official
+texts linked above to quote or verify a provision when a point is contested or
 high-stakes. When in doubt about which regime applies, state the assumption.
 
 ## 2. Task A — review workflow
@@ -268,10 +269,15 @@ method and rating scales are in `references/audit.md`.
 
 ## 9. Caveats
 
-- The bundled statutes are official texts: Australian Privacy Act 1988 compilation
-  No. 104 (4 June 2026); GDPR; AI Act; Data Act; California CCPA statute and CCPA
-  Regulations (both effective 1 January 2026). Verify currency against the official
-  register before relying on a citation in a high-stakes context.
+- This package ships summaries and citations, not the full statutes. Official texts:
+  Australian Privacy Act 1988 compilation No. 104 (4 June 2026) —
+  [legislation.gov.au](https://www.legislation.gov.au/C2004A03712/latest/text);
+  GDPR — [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj); AI Act —
+  [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj); Data Act —
+  [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/2854/oj); CCPA and CCPA
+  Regulations (effective 1 January 2026) — [CCPA statute](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.)
+  and [CPPA regulations](https://cppa.ca.gov/regulations/). Verify currency against
+  the official register before relying on a citation in a high-stakes context.
 - Each regime sits alongside others (e.g. Australian credit reporting and APP codes;
   the ePrivacy Directive, DMA, DSA, NIS2; other US state privacy laws; national
   Member State law). Note overlaps; this skill is not exhaustive.

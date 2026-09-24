@@ -2,10 +2,10 @@
 
 Two instruments apply together, both effective **1 January 2026**:
 
-| Instrument | Citation | Text |
+| Instrument | Citation | Official text |
 |---|---|---|
-| California Consumer Privacy Act of 2018 (as amended, incl. AB 137 and AB 566) | `CCPA § 1798.xxx` (Civil Code) | `legislation/USA/California/CCPA statute.txt` |
-| CCPA Regulations (California Privacy Protection Agency) | `CCPA Regs § 70xx` (Title 11, Div 6) | `legislation/USA/California/CCPA regulations.txt` |
+| California Consumer Privacy Act of 2018 (as amended, incl. AB 137 and AB 566) | `CCPA § 1798.xxx` (Civil Code) | [leginfo.legislature.ca.gov](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.) |
+| CCPA Regulations (California Privacy Protection Agency) | `CCPA Regs § 70xx` (Title 11, Div 6) | [cppa.ca.gov/regulations](https://cppa.ca.gov/regulations/) |
 
 The regulations do not stand alone: a violation of the regulations is a violation of
 the CCPA (Regs § 7000(b)). Cite both where relevant, e.g. "CCPA § 1798.100; CCPA

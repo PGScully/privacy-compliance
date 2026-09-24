@@ -45,19 +45,11 @@ references/
     ccpa.md                      CCPA obligations (rights, notices, contracts, ADMT, audits)
     privacy-policy.md            Required CCPA disclosures and policy content
     audit-checklist.md           CCPA audit procedures
-legislation/                     Copies of the statute text cited by this package
-  Australia/Privacy Act 1988.txt
-  Europe/GDPR/GDPR.txt
-  Europe/AI Act/EU AI Act.txt
-  Europe/Data Act/EU Data Act.txt
-  USA/California/CCPA statute.txt
-  USA/California/CCPA regulations.txt
 ```
 
-The `legislation/` files are copies included so the package is self-contained and
-its citations are verifiable offline. The canonical source (including the original
-PDFs) lives in the repository's top-level `legislation/`; copy files from there into
-this package when legislation is added or updated.
+The package ships summaries and citations, not the full statutes, to keep the
+installed size small (~200 KB). Use the official texts below to quote or verify a
+provision.
 
 ## Install
 
@@ -107,14 +99,14 @@ effectiveness. Start from `assets/audit-report-template.md`; the method is in
 `references/audit.md` and the procedures in
 `references/australia/audit-checklist.md` and `references/eu/audit-checklist.md`.
 
-## Keeping legislation in sync
+## Official texts
 
-This package carries copies of the statute text it cites. When the source
-legislation changes:
-
-1. update the file in the repository's top-level `legislation/`;
-2. copy the relevant text into `legislation/` here; and
-3. update the affected references.
+- Australia — [Privacy Act 1988](https://www.legislation.gov.au/C2004A03712/latest/text)
+- European Union — [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+- European Union — [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
+- European Union — [Data Act](https://eur-lex.europa.eu/eli/reg/2023/2854/oj)
+- USA / California — [CCPA statute](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.)
+- USA / California — [CCPA Regulations](https://cppa.ca.gov/regulations/)
 
 ## Scope and caveats
 

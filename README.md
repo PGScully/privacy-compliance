@@ -14,8 +14,9 @@ policies and privacy notices.
 ## Layout
 
 This repository is a skills collection. Each package lives in its own directory
-under `skills/` and is self-contained (entry point, references and bundled source
-text), so it can be uploaded to a skills repository as-is.
+under `skills/` and carries the skill entry point and references, so it can be
+uploaded to a skills repository as-is. The full statute texts are kept at the top
+level for reference and text extraction, but are **not** bundled in the package.
 
 ```
 legislation/                     Original source legislation (incl. source PDFs)
@@ -25,7 +26,7 @@ legislation/                     Original source legislation (incl. source PDFs)
   Europe/Data Act/               Data Act text + source PDF
   USA/California/                CCPA statute and regulations text + source PDFs
 skills/
-  privacy-skill/                 Uploadable, self-contained skill package
+  privacy-skill/                 Uploadable skill package
     SKILL.md                     Agent Skills entry point
     README.md                    Package documentation
     LICENSE
@@ -53,12 +54,12 @@ skills/
         ccpa.md                  CCPA obligations
         privacy-policy.md        Required CCPA disclosures
         audit-checklist.md       CCPA audit procedures
-    legislation/                 Copies of the text cited by the package
 ```
 
-The top-level `legislation/` directory is the original source and is not part of the
-uploaded package. The package carries its own copies of the relevant text under
-`skills/privacy-skill/legislation/`.
+The top-level `legislation/` directory holds the full source texts (including source
+PDFs). It is **not** part of the uploaded package: to keep the installed skill small
+(~200 KB), the package ships summaries and citations and links to the official texts
+below rather than bundling the full statutes.
 
 The package covers:
 
@@ -97,7 +98,7 @@ install and usage instructions. In short, place
 To extend an existing jurisdiction or add a new one:
 
 1. Place the source text in the top-level `legislation/<Jurisdiction>/`. For PDFs,
-   extract to text alongside the source file so agents can quote and verify
+   extract to text alongside the source file so you can quote and verify
    provisions:
 
    ```sh
@@ -105,8 +106,6 @@ To extend an existing jurisdiction or add a new one:
      "legislation/Europe/GDPR/GDPR.txt"
    ```
 
-2. Copy the relevant text file(s) into the package under
-   `skills/privacy-skill/legislation/<Jurisdiction>/` so the package stays
-   self-contained.
-3. Add a matching reference under `skills/privacy-skill/references/<jurisdiction>/`
-   and link it from `SKILL.md`.
+2. Add a matching reference under `skills/privacy-skill/references/<jurisdiction>/`,
+   link it from `SKILL.md`, and add the official online link to the jurisdiction
+   table. Do **not** copy the full statute text into the package.

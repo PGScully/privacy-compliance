@@ -47,12 +47,11 @@ skills/
         ccpa.md                        CCPA obligations
         privacy-policy.md              Required CCPA disclosures
         audit-checklist.md             CCPA audit procedures
-    legislation/                       Copies of the text cited by the package
 ```
 
-The top-level `legislation/` directory holds the original source files and is **not**
-part of any uploaded package. Each package keeps copies of the relevant text so it
-stays self-contained.
+The top-level `legislation/` directory holds the full source texts and is **not** part
+of any uploaded package. Packages ship summaries and citations only, and link to the
+official online texts; this keeps the installed skill small (currently ~200 KB).
 
 ## Key requirements (from README)
 
@@ -62,20 +61,19 @@ stays self-contained.
 
 ## Adding legislation
 
-Place the original text in the top-level `legislation/<Jurisdiction>/`, then copy the
-relevant file(s) into the package at
-`skills/privacy-skill/legislation/<Jurisdiction>/`, add a matching reference under
-`skills/privacy-skill/references/<jurisdiction>/`, and link it from `SKILL.md`.
-Keep the top-level `legislation/` as the authoritative source; the package only holds
-copies of what it cites.
+Place the original text in the top-level `legislation/<Jurisdiction>/`, add a matching
+reference under `skills/privacy-skill/references/<jurisdiction>/`, link it from
+`SKILL.md`, and add the **official online link** to the jurisdiction table. Do not
+copy the full statute text into the package. Keep the top-level `legislation/` as the
+authoritative source for text extraction and quotation.
 
 ## Outputs
 
 A skill suitable for use by multiple agents, e.g. Claude, Codex, Deepseek, etc, with
 sub-folders for each jurisdiction.
 
-- Each skill is packaged in its own self-contained directory under `skills/`, ready
-  to upload to a skills repository as-is.
+- Each skill is packaged in its own directory under `skills/`, ready to upload to a
+  skills repository as-is.
 - Entry point is `skills/privacy-skill/SKILL.md`, written to the Agent Skills spec so
   it works across agents (Claude, Codex, Deepseek, pi, ...).
 - Per-jurisdiction detail lives under `skills/privacy-skill/references/<jurisdiction>/`.
@@ -99,8 +97,8 @@ pdftotext -layout "legislation/Europe/GDPR/CELEX_32016R0679_EN_TXT.pdf" \
   "legislation/Europe/GDPR/GDPR.txt"
 ```
 
-Keep the extracted `.txt` alongside the source PDF in the top-level `legislation/`,
-then copy the `.txt` into the package's `legislation/`.
+Keep the extracted `.txt` alongside the source PDF in the top-level `legislation/`.
+The text stays in the top-level directory — do **not** copy it into the package.
 
 ## Notes
 
@@ -115,3 +113,6 @@ then copy the `.txt` into the package's `legislation/`.
   Country>/...` and `references/<jurisdiction>/...`.
 - Do not add files that reference paths outside the package; a package must work
   when copied out of this repository on its own.
+- Do not bundle full statute text in a package (it dominates the installed size).
+  Reference the summary under `references/<jurisdiction>/` and link the official
+  online text instead.

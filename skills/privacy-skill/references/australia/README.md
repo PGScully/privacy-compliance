@@ -1,8 +1,8 @@
 # Australia — Privacy Act 1988 (Cth)
 
-Statute text: `legislation/Australia/Privacy Act 1988.txt` (compilation No. 104,
-4 June 2026, includes Act No. 75, 2025). Cite as **Privacy Act 1988 (Cth)** with
-the section, APP clause or Schedule clause.
+Statute text: [Privacy Act 1988](https://www.legislation.gov.au/C2004A03712/latest/text)
+(compilation No. 104, 4 June 2026, includes Act No. 75, 2025). Cite as
+**Privacy Act 1988 (Cth)** with the section, APP clause or Schedule clause.
 
 Read the references in this order:
 

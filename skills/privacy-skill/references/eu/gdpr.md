@@ -1,6 +1,6 @@
 # EU GDPR — Regulation (EU) 2016/679
 
-General Data Protection Regulation. Full text: `legislation/Europe/GDPR/GDPR.txt`.
+General Data Protection Regulation. Full text: [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 Cite as **GDPR Art N** (e.g. GDPR Art 6(1)(a)), and note recital support where
 useful.
 

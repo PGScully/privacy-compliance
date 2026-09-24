@@ -3,7 +3,7 @@
 The Data Act governs access to and sharing of data from connected products and
 services, cloud switching, and safeguards against unlawful governmental access. It
 covers both personal and non-personal data, and it **complements** the GDPR rather
-than replacing it. Full text: `legislation/Europe/Data Act/EU Data Act.txt`. Cite
+than replacing it. Full text: [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/2854/oj). Cite
 as **Data Act Art N**.
 
 ## 1. Scope and relationship to the GDPR

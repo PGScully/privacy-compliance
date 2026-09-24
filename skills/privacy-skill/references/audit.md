@@ -35,8 +35,9 @@ Record, in writing, before testing:
   environments, systems and documentation; the period covered; and explicit
   **exclusions**.
 - **Criteria** — the exact legislation and version being audited against (for
-  example Privacy Act 1988 (Cth) as at the bundled compilation; GDPR; AI Act; Data
-  Act), plus any codes (registered APP codes, CR code) or contractual commitments.
+  example Privacy Act 1988 (Cth) as at compilation No. 104; GDPR; AI Act; Data Act;
+  CCPA and its regulations), plus any codes (registered APP codes, CR code) or
+  contractual commitments.
 - **Approach** — compliance audit against the criteria, evidence-based. State the
   limits: pre-implementation audits assess **by design** and cannot evidence
   operating effectiveness; later audits may test operation.
