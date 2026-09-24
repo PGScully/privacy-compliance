@@ -26,7 +26,7 @@ legislation/                     Original source legislation (incl. source PDFs)
   Europe/Data Act/               Data Act text + source PDF
   USA/California/                CCPA statute and regulations text + source PDFs
 skills/
-  privacy-skill/                 Uploadable skill package
+  privacy-skills/                 Uploadable skill package
     SKILL.md                     Agent Skills entry point
     README.md                    Package documentation
     LICENSE
@@ -84,14 +84,14 @@ The package covers:
 
 ## Using the skill
 
-See [`skills/privacy-skill/README.md`](skills/privacy-skill/README.md) for full
+See [`skills/privacy-skills/README.md`](skills/privacy-skills/README.md) for full
 install and usage instructions. In short, place
-`skills/privacy-skill/` where your agent discovers skills:
+`skills/privacy-skills/` where your agent discovers skills:
 
 - Agent Skills standard: `.agents/skills/` (project) or `~/.agents/skills/` (user).
 - pi: running pi from this repository discovers it automatically — the project
   settings file [`.pi/settings.json`](.pi/settings.json) registers `skills/`.
-  It is available as `/skill:privacy-skill`.
+  It is available as `/skill:privacy-skills`.
 
 ## Adding legislation
 
@@ -106,7 +106,7 @@ To extend an existing jurisdiction or add a new one:
      "legislation/Europe/GDPR/GDPR.txt"
    ```
 
-2. Add a matching reference under `skills/privacy-skill/references/<jurisdiction>/`,
+2. Add a matching reference under `skills/privacy-skills/references/<jurisdiction>/`,
    link it from `SKILL.md`, and add the official online link to the jurisdiction
    table. Do **not** copy the full statute text into the package.
 3. Add the instrument to `legislation/sources.json` and run
@@ -148,7 +148,7 @@ reports **update available**:
 1. Review the change in the official text (follow the link in the table).
 2. Update the top-level `legislation/<Jurisdiction>/` text — for the EU and US PDFs
    re-extract with `pdftotext -layout`.
-3. Update the affected reference(s) under `skills/privacy-skill/references/` and, if
+3. Update the affected reference(s) under `skills/privacy-skills/references/` and, if
    a provision changed, the corresponding audit/notice checklists.
 4. Re-run `python scripts/check-legislation.py --accept` to record the new baseline
    and advance the `last updated` date.
