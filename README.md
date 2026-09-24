@@ -9,7 +9,8 @@ policies and privacy notices.
 ## Skill Requirements
 
 1. The skill should be applicable across all stages of development, from requirements gathering, through implementation, to post deployment operation.
-2. Any issues flagged by this skill should include references to the relevant sections of the relevant privacy legislation.
+2. Any issues flagged by this skill should reference the relevant privacy
+   legislation by name/abbreviation as well as the relevant section(s).
 
 ## Layout
 
@@ -72,9 +73,10 @@ The package covers:
 ## Capabilities
 
 - **Review** — flag privacy issues in code, designs, data flows and policies, each
-  with a citation to the specific provision (for example `APP 11.1`,
+  naming the legislation and citing the specific provision (for example
+  `Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1)`,
   `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
-  `Data Act Art 4(12)`).
+  `Data Act Art 4(12)`, `CCPA § 1798.120`, `CCPA Regs § 7013(c)(1)`).
 - **Audit** — assess requirements, designs, code and documentation against a defined
   scope and criteria at any lifecycle stage (requirements, design, build, operation,
   change), rating every control and producing a report with a control matrix,

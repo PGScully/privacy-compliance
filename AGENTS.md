@@ -138,8 +138,11 @@ the skill package.
 - When adding a capability, keep the drafting/validation instructions in `SKILL.md`
   and the required content in the jurisdiction references; keep reusable fill-in
   documents under `assets/`.
-- When adding skill content, cite legislation in the native form: Australian
-  `Act name YYYY s <section>` / `APP N.N`; EU `Regulation name Art N`.
+- When adding skill content, cite legislation in the native form *and always name
+  the instrument alongside the provision*: Australian `Privacy Act 1988 (Cth) s
+  <section>` / `Privacy Act 1988 (Cth) Sch 1 cl N.N (APP N.N)`; EU `GDPR Art N`,
+  `AI Act Art N`, `Data Act Art N`; California `CCPA § N` / `CCPA Regs § N`. Never
+  cite a bare `Art 13(1)(a)`, `s 26WE` or `§ 7013` without the instrument.
 - Keep the jurisdiction sub-folder naming consistent: `legislation/<Region or
   Country>/...` and `references/<jurisdiction>/...`.
 - Do not add files that reference paths outside the package; a package must work

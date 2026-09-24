@@ -4,7 +4,7 @@ A portable [Agent Skills](https://agentskills.io/specification) package that hel
 coding assistants **review** software, designs, data flows and policies for privacy
 and data-protection compliance, **audit** code and documentation against a defined
 scope, and **draft or update privacy policies and privacy notices** — tracing every
-finding or required element to its provision.
+finding or required element to the legislation and provision it comes from.
 
 ## Coverage
 
@@ -74,9 +74,10 @@ The skill will:
 2. classify the data (personal, sensitive/special-category, identifiers);
 3. map the data lifecycle to the relevant obligations;
 4. check breach, impact-assessment and AI/GPAI duties where relevant; and
-5. report findings, each citing the exact provision (for example `APP 11.1`,
+5. report findings, each naming the legislation and citing the exact provision
+   (for example `Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1)`,
    `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
-   `Data Act Art 4(12)`).
+   `Data Act Art 4(12)`, `CCPA § 1798.120`, `CCPA Regs § 7013(c)(1)`).
 
 ### Draft a privacy policy
 
@@ -98,6 +99,21 @@ Pre-code audits return requirements and design gaps; later audits can test opera
 effectiveness. Start from `assets/audit-report-template.md`; the method is in
 `references/audit.md` and the procedures in
 `references/australia/audit-checklist.md` and `references/eu/audit-checklist.md`.
+
+## Citations
+
+Every citation names the legislation as well as the provision — never a bare
+`Art 6(1)(a)`, `s 26WE` or `§ 7013`. Name the instrument with its official
+identifier on first use, then use the accepted abbreviation:
+
+| Instrument | Cite as |
+|---|---|
+| Australia | `Privacy Act 1988 (Cth) s 16C`; `Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1)` |
+| EU | `GDPR Art 6(1)(a)`; `AI Act Art 5(1)(f)`; `Data Act Art 4(12)` |
+| USA / California | `CCPA § 1798.120`; `CCPA Regs § 7013(c)(1)` (11 CCR § 7013) |
+
+Give the provision at the finest useful granularity, and cite each applicable
+instrument separately (e.g. `GDPR Art 6(1)(a); Privacy Act 1988 (Cth) APP 3.3`).
 
 ## Official texts
 
