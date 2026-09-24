@@ -4,7 +4,7 @@ Privacy skill for Coding Assistants.  Skills derived from privacy legislation.
 
 ## Legislation
 
-- Australian [Privacy Act 1998](https://www.legislation.gov.au/C2004A03712/latest/text)
+- Australian [Privacy Act 1988](https://www.legislation.gov.au/C2004A03712/latest/text)
 
 ## Skill Requirements
 
