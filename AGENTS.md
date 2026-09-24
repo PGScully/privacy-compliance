@@ -77,6 +77,10 @@ sub-folders for each jurisdiction.
 - The skill has three capabilities: **review** (flag issues), **audit** (rate every
   control against a defined scope and produce a report), and **draft a privacy
   policy/notice** (targeting AU APP 1.4 and EU GDPR Art 13/14, merged where needed).
+- The **audit** capability applies across the whole lifecycle — at requirements
+  gathering before any code exists, through design, build, operation and later
+  changes. Each audit states the stage(s) in scope; pre-code audits give design-only
+  assurance and return requirements/design gaps.
 - Keep all paths inside a package **relative to the package root**, so the package
   stays portable when uploaded on its own.
 

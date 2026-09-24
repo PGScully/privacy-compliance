@@ -5,6 +5,21 @@ control: what to test, the evidence to inspect, and the condition for a "conform
 rating. Use with `references/audit.md` (methodology, ratings, reporting) and
 `references/australia/apps.md` (obligation detail).
 
+## Applying this checklist at each stage
+
+These controls apply at every stage; only the evidence and procedure change (see
+`references/audit.md`). For example:
+
+- **Requirements:** assess APP 3 by challenging each planned data element and its
+  purpose; require an APP 1.4 policy and an APP 5 collection notice; ask APP 8 where
+  data will be hosted; require an APP 11.2 retention and deletion rule.
+- **Design:** assess APP 11 by confirming the security design (encryption, access
+  control); design the APP 4 unsolicited-data disposition; design the APP 12/13
+  rights workflow and the Part IIIC breach process.
+- **Build / operation:** inspect config and code, re-perform rights requests in a
+  test environment, and test operating effectiveness from records (access reviews,
+  DSR logs, breach register, retention jobs).
+
 ## Governance and transparency
 
 | Ref | Control question | Evidence | Conforms if |

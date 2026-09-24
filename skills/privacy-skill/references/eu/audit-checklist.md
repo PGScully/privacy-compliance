@@ -7,6 +7,21 @@ Control-by-control audit procedures for an EU audit. Use with `references/audit.
 Determine first whether each regulation applies (GDPR Art 3; AI Act Art 2; Data Act
 Art 1) and mark non-applicable controls with the basis.
 
+## Applying this checklist at each stage
+
+These controls apply at every stage; only the evidence and procedure change (see
+`references/audit.md`). For example:
+
+- **Requirements:** assess Art 5(1)(c) minimisation and the Art 6 lawful basis
+  against the planned data elements; require the Art 13/14 notice content; ask where
+  data will be hosted (Art 44–49); require retention rules (Art 5(1)(e)); classify AI
+  systems (AI Act Art 5/6).
+- **Design:** confirm Art 25 data protection by design and by default, Art 32 security
+  design, Art 22 automated-decision safeguards, and AI Act Art 14 human oversight.
+- **Build / operation:** inspect code and config, re-perform rights requests and
+  deletion in a test environment, and test operating effectiveness from records
+  (ROPA, DPAs, DPIA, access reviews, breach register).
+
 ## GDPR — principles and lawfulness
 
 | Ref | Control question | Evidence | Conforms if |

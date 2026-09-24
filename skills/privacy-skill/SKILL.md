@@ -1,6 +1,6 @@
 ---
 name: privacy-skill
-description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing code and documentation for privacy compliance; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings, audit reports or policy drafts that cite the relevant section, article or APP clause.
+description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing requirements, designs, code or documentation at any lifecycle stage; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product and cloud features. Produces findings, audit reports or policy drafts that cite the relevant section, article or APP clause.
 license: MIT
 ---
 
@@ -13,8 +13,9 @@ things:
   with precise citations (sections 1–5).
 - **Draft or update a privacy policy / privacy notice**, with every required
   element traced to its provision (section 6).
-- **Audit** code and documentation against a defined scope and criteria, producing
-  a rated control matrix and a report (section 7).
+- **Audit** requirements, designs, code and documentation against a defined scope
+  and criteria at any lifecycle stage, producing a rated control matrix and a report
+  (section 7).
 
 Every mode starts by choosing the jurisdiction(s) below.
 
@@ -97,7 +98,7 @@ counsel).
 | Connected products / IoT / cloud | Data Act Art 3–6, 30–32; GDPR Art 6, 20 |
 | Public-body data requests | Data Act Art 14–18; GDPR Art 6(1)(e) |
 | Writing or updating a privacy policy | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `assets/privacy-policy-template.md` |
-| Auditing a codebase or documentation | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `assets/audit-report-template.md` |
+| Auditing at any lifecycle stage (requirements, design, build, operation, change) | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `assets/audit-report-template.md` |
 
 ## 6. Task B — draft or update a privacy policy
 
@@ -151,34 +152,63 @@ Return, after the draft:
    an appropriate form (AU APP 1.5–1.6), reachable from every collection point, and
    consistent with what the system actually does.
 
-## 7. Task C — audit code and documentation
+## 7. Task C — audit across the lifecycle
 
-Use this when asked to audit a codebase or documentation for privacy compliance.
-An audit is a structured, evidence-based assessment against defined criteria that
-produces a rated control matrix and a report — distinct from the ad-hoc review in
-Task A.
+Use this when asked to audit for privacy compliance. An audit is a structured,
+evidence-based assessment against defined criteria that produces a rated control
+matrix and a report — distinct from the ad-hoc review in Task A.
+
+**Audits are not limited to code.** They apply at every stage, including before any
+code exists. Establish the **stage(s)** first: it determines the artefacts you can
+examine and the kind of finding you can raise.
+
+| Stage | Primary artefacts | Audit focus |
+|---|---|---|
+| **Requirements / discovery** | requirements, user stories, acceptance criteria, process and data-flow descriptions, business case, RFP, data sources | Is the *planned* processing lawful, necessary and proportionate? What privacy requirements must be added (notice, consent, retention, access/correction, cross-border, security)? |
+| **Design / architecture** | architecture and data models, API contracts, IaC plans, vendor/subprocessor selection, threat model, DPIA draft | Are the required controls *designed in* (minimisation, security, retention, DPbD)? |
+| **Development / build** | code, config, migrations, tests, CI checks | Are the designed and required controls *actually implemented*? |
+| **Pre-release / readiness** | release checklist, published notices, runbooks, training | Can the entity meet its obligations from day one? |
+| **Post-deployment / operation** | logs, access reviews, data-subject-request records, breach register, retention jobs, monitoring, training records | Do the controls *operate effectively* over time? |
+| **Change / update** | change requests, PRs, release notes, migrations, new data fields or vendors | Does the change preserve compliance; does it introduce new processing? |
+
+An audit may cover one stage (e.g. a requirements review, a pre-release readiness
+check, a change impact audit) or several. State which stages are in scope and which
+are excluded. Where the audit is pre-code, findings will often be **requirements or
+design gaps** rather than defects — recommend the requirement, control or design
+change needed.
 
 ### 7.1 Plan
 
-Record the objective, **scope** (repositories, services, environments,
-documentation, period) and explicit **exclusions**; the **criteria** (exact
-legislation and version); the approach (documentation and design audit, evidence-
-based); and where legal sign-off is required. Prioritise high-risk processing.
+Record the objective; the **stage(s)** and **scope** (requirements/design set,
+repositories, services, environments, documentation, period) with explicit
+**exclusions**; the **criteria** (exact legislation and version); the approach
+(evidence-based; note limits, e.g. design-only or no operating-effectiveness
+testing); and where legal sign-off is required. Prioritise high-risk processing.
 
 ### 7.2 Collect evidence
 
-Enumerate evidence before concluding: data schemas and migrations, collection
-points, consent configuration, IAM and encryption settings, retention/deletion jobs,
-subprocessor and transfer documents, rights workflows, logging, breach runbooks and
-vendor contracts. Record **where** each item is (file:line, config path, document
-section). The full evidence map is in `references/audit.md` (section 2).
+Enumerate the evidence that exists **at the stage in scope** — before concluding.
+
+- **Pre-code:** requirements and user stories, data-flow and process diagrams,
+  architecture and data models (planned), vendor selection and data-processing
+  intent, DPIA drafts, acceptance criteria.
+- **Build and later:** schemas and migrations, collection points, consent
+  configuration, IAM and encryption settings, retention/deletion jobs, subprocessor
+  and transfer documents, rights workflows, logging, breach runbooks, vendor
+  contracts, and operational records (DSR logs, access reviews, breach register).
+
+Record **where** each item is (file:line, config path, document section, or planned
+requirement ID). The full evidence map is in `references/audit.md` (section 2).
 
 ### 7.3 Test every control
 
 Work through the jurisdiction checklist control by control and **rate each one**
 (Conforms / Partially conforms / Does not conform / Not applicable / Not tested).
-Inspect, walk through, re-perform in a test environment where safe, and sample where
-volume requires it.
+Adapt the procedure to the stage — for example, test necessity (AU APP 3; GDPR
+Art 5(1)(c)) by challenging each planned data element at requirements, by inspecting
+the schema at build, and by sampling real records in operation. At pre-code stages,
+controls are assessed **by design**; state that operating effectiveness was not
+tested.
 
 - Australia — `references/australia/audit-checklist.md` (APP 1–13, Part IIIC,
   Schedule 2, and conditional credit-reporting/code controls).
@@ -188,11 +218,12 @@ volume requires it.
 ### 7.4 Report
 
 Produce findings in the audit finding format (criteria, condition, evidence, cause,
-effect, recommendation, management response), a **control matrix** with a rating per
-control, an **evidence index**, and an **overall opinion** (Reasonable assurance /
-Qualified / Adverse / Insufficient evidence). Start from
-`assets/audit-report-template.md`; the method and rating scales are in
-`references/audit.md`.
+effect, recommendation, management response), stating the **stage** for each; a
+**control matrix** with a rating per control; an **evidence index**; and an
+**overall opinion** (Reasonable assurance / Qualified / Adverse / Insufficient
+evidence). Where the audit is pre-implementation, make clear that assurance is over
+requirements and design only. Start from `assets/audit-report-template.md`; the
+method and rating scales are in `references/audit.md`.
 
 ## 8. Bundled references
 

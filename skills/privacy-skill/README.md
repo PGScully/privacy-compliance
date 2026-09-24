@@ -86,16 +86,18 @@ and return the document plus a coverage check and a list of open questions. It
 targets the Australian **APP 1.4** contents and the **GDPR Art 13/14** information
 requirements (and merges them where both apply).
 
-### Audit code and documentation
+### Audit at any lifecycle stage
 
-Ask the agent to audit a codebase or documentation for privacy compliance. The
-skill plans the audit (scope, criteria, exclusions), collects evidence, tests every
-control in the jurisdiction checklist and rates it (Conforms / Partially conforms /
-Does not conform / Not applicable / Not tested), then produces a report with a
-control matrix, evidence index and an overall opinion. Start from
-`assets/audit-report-template.md`; the method is in `references/audit.md` and the
-procedures in `references/australia/audit-checklist.md` and
-`references/eu/audit-checklist.md`.
+Ask the agent to audit for privacy compliance — at requirements gathering before any
+code exists, during design and build, at release, in operation, or for a change. The
+skill plans the audit (stage(s), scope, criteria, exclusions), collects the evidence
+available at that stage, tests every control in the jurisdiction checklist and rates
+it (Conforms / Partially conforms / Does not conform / Not applicable / Not tested),
+then produces a report with a control matrix, evidence index and an overall opinion.
+Pre-code audits return requirements and design gaps; later audits can test operating
+effectiveness. Start from `assets/audit-report-template.md`; the method is in
+`references/audit.md` and the procedures in
+`references/australia/audit-checklist.md` and `references/eu/audit-checklist.md`.
 
 ## Keeping legislation in sync
 

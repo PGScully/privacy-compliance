@@ -12,10 +12,11 @@ Delete annotations and inapplicable sections before issuing.
 |---|---|
 | **Report title** | [Privacy compliance audit — [system/scope]] |
 | **Objective** | [Provide assurance that [system] complies with [criteria]] |
+| **Stage(s) in scope** | [Requirements / Design / Build / Pre-release / Operation / Change] |
 | **Scope** | [Repositories, services, environments, documentation; period covered] |
 | **Exclusions** | [Out-of-scope items] |
 | **Criteria** | [Privacy Act 1988 (Cth) as at compilation ...; GDPR; AI Act; Data Act; codes] |
-| **Approach** | [Documentation and design audit; evidence-based; no operating-effectiveness testing] |
+| **Approach** | [Evidence-based; state whether by design only (pre-code) or with operating-effectiveness testing] |
 | **Audit period** | [YYYY-MM-DD to YYYY-MM-DD] |
 | **Auditor** | [Name / role / AI-assisted] |
 | **Date issued** | [YYYY-MM-DD] |
@@ -61,9 +62,10 @@ significant issues.]
 
 ### [Critical] [Short title]
 
+- **Stage:** [requirements / design / build / pre-release / operation / change]
 - **Criteria:** [provision, e.g. APP 11.1; GDPR Art 32]
-- **Condition:** [what actually exists]
-- **Evidence:** [file:line / config path / document section]
+- **Condition:** [what actually exists, or is planned at pre-code stages]
+- **Evidence:** [file:line / config path / document section / requirement ID]
 - **Cause:** [why it exists]
 - **Effect:** [risk to individuals and to the entity]
 - **Recommendation:** [concrete, testable remediation + priority]
@@ -79,8 +81,9 @@ significant issues.]
 
 ## 6. Limitations
 
-- This is an AI-assisted compliance audit of design and documentation, not a
-  statutory audit, legal opinion, or penetration test.
+- This is an AI-assisted compliance audit, not a statutory audit, legal opinion, or
+  penetration test.
+- Pre-implementation audits give assurance over requirements and design only.
 - Operating effectiveness was not tested over time; [state any controls assessed by
   design only].
 - [Any scope or evidence limitations].

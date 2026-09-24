@@ -67,9 +67,10 @@ The package covers:
   with a citation to the specific provision (for example `APP 11.1`,
   `Privacy Act 1988 (Cth) s 26WE`, `GDPR Art 6(1)(a)`, `AI Act Art 5(1)(f)`,
   `Data Act Art 4(12)`).
-- **Audit** — assess code and documentation against a defined scope and criteria,
-  rating every control and producing a report with a control matrix, evidence index
-  and an overall opinion.
+- **Audit** — assess requirements, designs, code and documentation against a defined
+  scope and criteria at any lifecycle stage (requirements, design, build, operation,
+  change), rating every control and producing a report with a control matrix,
+  evidence index and an overall opinion.
 - **Draft a privacy policy** — create or update a policy/notice, with every required
   element traced to its provision (AU **APP 1.4**; EU **GDPR Art 13/14**).
 
