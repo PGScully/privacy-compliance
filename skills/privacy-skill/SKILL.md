@@ -27,13 +27,13 @@ Every mode starts by choosing the jurisdiction(s) below.
 Determine which regimes apply before reviewing anything. If more than one applies,
 review under each and report overlapping findings once, citing both.
 
-| Regime | Applies when | Reference | Official text |
-|---|---|---|---|
-| **Australia — Privacy Act 1988 (Cth)** | An APP entity (agency or organisation) with an Australian link, or a file number recipient / credit reporting body. | `references/australia/` | [legislation.gov.au](https://www.legislation.gov.au/C2004A03712/latest/text) |
-| **EU — GDPR (2016/679)** | Processing in the context of EU/EEA establishment, or offering goods/services to or monitoring people in the EU. | `references/eu/gdpr.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj) |
-| **EU — AI Act (2024/1689)** | Placing on the market, putting into service or using AI systems with EU effect, including non-EU providers. | `references/eu/ai-act.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) |
-| **EU — Data Act (2023/2854)** | Connected products, related services, data sharing, cloud switching or unlawful governmental access with EU effect. | `references/eu/data-act.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/2854/oj) |
-| **USA / California — CCPA + CCPA Regulations** | A for-profit business doing business in California that meets a threshold (revenue, 100,000+ consumers/households, or 50%+ revenue from selling/sharing), or a service provider/contractor/third party handling their data. | `references/usa/` | [CCPA statute](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.); [CCPA Regulations](https://cppa.ca.gov/regulations/) |
+| Regime                                         | Applies when                                                                                                                                                                                                                | Reference                   | Official text                                                                                                                                                                        |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Australia — Privacy Act 1988 (Cth)**         | An APP entity (agency or organisation) with an Australian link, or a file number recipient / credit reporting body.                                                                                                         | `references/australia/`     | [legislation.gov.au](https://www.legislation.gov.au/C2004A03712/latest/text)                                                                                                         |
+| **EU — GDPR (2016/679)**                       | Processing in the context of EU/EEA establishment, or offering goods/services to or monitoring people in the EU.                                                                                                            | `references/eu/gdpr.md`     | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj)                                                                                                                             |
+| **EU — AI Act (2024/1689)**                    | Placing on the market, putting into service or using AI systems with EU effect, including non-EU providers.                                                                                                                 | `references/eu/ai-act.md`   | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)                                                                                                                            |
+| **EU — Data Act (2023/2854)**                  | Connected products, related services, data sharing, cloud switching or unlawful governmental access with EU effect.                                                                                                         | `references/eu/data-act.md` | [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2023/2854/oj)                                                                                                                            |
+| **USA / California — CCPA + CCPA Regulations** | A for-profit business doing business in California that meets a threshold (revenue, 100,000+ consumers/households, or 50%+ revenue from selling/sharing), or a service provider/contractor/third party handling their data. | `references/usa/`           | [CCPA statute](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.); [CCPA Regulations](https://cppa.ca.gov/regulations/) |
 
 The references summarise each instrument and cite the exact provisions. **This
 package does not ship the full statutes** (to keep it small). Use the official
@@ -87,24 +87,24 @@ counsel).
 
 ## 5. Quick mapping: common patterns
 
-| Pattern | Check |
-|---|---|
-| New field, form or telemetry event | AU APP 3 + APP 5; GDPR Art 5(1)(c), 6, 13 |
-| Consent / cookie banner / preference centre | AU APP 3.3, APP 5; GDPR Art 7, 9 |
-| Analytics, ad tech, trackers, lead gen | AU APP 6, APP 7; GDPR Art 5(1)(b), 21, 22 |
-| Cloud, offshore hosting, offshore support | AU APP 8, s 16C; GDPR Art 44–49; Data Act Art 32 |
-| Logs, backups, warehouse, ML training data | AU APP 11, APP 10; GDPR Art 5(1)(e), 25, 32; AI Act Art 10, 12 |
-| Deletion / access / correction / portability | AU APP 11.2, 12, 13; GDPR Art 15–20; Data Act Art 4, 30 |
-| Identity verification, IDs, biometrics | AU APP 3, APP 9; GDPR Art 9; AI Act Art 5, Annex III |
-| AI features (chat, scoring, detection) | AI Act Art 5 prohibitions, Art 6/Annex III, Art 14, 26, 50; GDPR Art 22, 35 |
-| Workplace monitoring / HR platforms | AU s 7B(3) employee records; AI Act Art 5(1)(f), Art 26(7) |
-| Incident response / breach runbooks | AU Part IIIC (s 26WE, 26WH, 26WK, 26WL); GDPR Art 33–34 |
-| Connected products / IoT / cloud | Data Act Art 3–6, 30–32; GDPR Art 6, 20 |
-| Public-body data requests | Data Act Art 14–18; GDPR Art 6(1)(e) |
-| Selling/sharing data, ad tech, "Do Not Sell or Share" | CCPA §§ 1798.120, 1798.135; Regs §§ 7013, 7025–7026 |
-| Sensitive personal information | CCPA § 1798.121; Regs §§ 7014, 7027 |
-| Automated decisions / profiling / scoring | CCPA Regs §§ 7200, 7220–7222 (ADMT); § 7150 (risk assessment); AI Act Art 5/6; GDPR Art 22 |
-| Writing or updating a privacy policy | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `references/usa/privacy-policy.md`, `assets/privacy-policy-template.md` |
+| Pattern                                                                          | Check                                                                                                                                                                        |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New field, form or telemetry event                                               | AU APP 3 + APP 5; GDPR Art 5(1)(c), 6, 13                                                                                                                                    |
+| Consent / cookie banner / preference centre                                      | AU APP 3.3, APP 5; GDPR Art 7, 9                                                                                                                                             |
+| Analytics, ad tech, trackers, lead gen                                           | AU APP 6, APP 7; GDPR Art 5(1)(b), 21, 22                                                                                                                                    |
+| Cloud, offshore hosting, offshore support                                        | AU APP 8, s 16C; GDPR Art 44–49; Data Act Art 32                                                                                                                             |
+| Logs, backups, warehouse, ML training data                                       | AU APP 11, APP 10; GDPR Art 5(1)(e), 25, 32; AI Act Art 10, 12                                                                                                               |
+| Deletion / access / correction / portability                                     | AU APP 11.2, 12, 13; GDPR Art 15–20; Data Act Art 4, 30                                                                                                                      |
+| Identity verification, IDs, biometrics                                           | AU APP 3, APP 9; GDPR Art 9; AI Act Art 5, Annex III                                                                                                                         |
+| AI features (chat, scoring, detection)                                           | AI Act Art 5 prohibitions, Art 6/Annex III, Art 14, 26, 50; GDPR Art 22, 35                                                                                                  |
+| Workplace monitoring / HR platforms                                              | AU s 7B(3) employee records; AI Act Art 5(1)(f), Art 26(7)                                                                                                                   |
+| Incident response / breach runbooks                                              | AU Part IIIC (s 26WE, 26WH, 26WK, 26WL); GDPR Art 33–34                                                                                                                      |
+| Connected products / IoT / cloud                                                 | Data Act Art 3–6, 30–32; GDPR Art 6, 20                                                                                                                                      |
+| Public-body data requests                                                        | Data Act Art 14–18; GDPR Art 6(1)(e)                                                                                                                                         |
+| Selling/sharing data, ad tech, "Do Not Sell or Share"                            | CCPA §§ 1798.120, 1798.135; Regs §§ 7013, 7025–7026                                                                                                                          |
+| Sensitive personal information                                                   | CCPA § 1798.121; Regs §§ 7014, 7027                                                                                                                                          |
+| Automated decisions / profiling / scoring                                        | CCPA Regs §§ 7200, 7220–7222 (ADMT); § 7150 (risk assessment); AI Act Art 5/6; GDPR Art 22                                                                                   |
+| Writing or updating a privacy policy                                             | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `references/usa/privacy-policy.md`, `assets/privacy-policy-template.md`                         |
 | Auditing at any lifecycle stage (requirements, design, build, operation, change) | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `references/usa/audit-checklist.md`, `assets/audit-report-template.md` |
 
 ## 6. Task B — draft or update a privacy policy
@@ -174,14 +174,14 @@ matrix and a report — distinct from the ad-hoc review in Task A.
 code exists. Establish the **stage(s)** first: it determines the artefacts you can
 examine and the kind of finding you can raise.
 
-| Stage | Primary artefacts | Audit focus |
-|---|---|---|
-| **Requirements / discovery** | requirements, user stories, acceptance criteria, process and data-flow descriptions, business case, RFP, data sources | Is the *planned* processing lawful, necessary and proportionate? What privacy requirements must be added (notice, consent, retention, access/correction, cross-border, security)? |
-| **Design / architecture** | architecture and data models, API contracts, IaC plans, vendor/subprocessor selection, threat model, DPIA draft | Are the required controls *designed in* (minimisation, security, retention, DPbD)? |
-| **Development / build** | code, config, migrations, tests, CI checks | Are the designed and required controls *actually implemented*? |
-| **Pre-release / readiness** | release checklist, published notices, runbooks, training | Can the entity meet its obligations from day one? |
-| **Post-deployment / operation** | logs, access reviews, data-subject-request records, breach register, retention jobs, monitoring, training records | Do the controls *operate effectively* over time? |
-| **Change / update** | change requests, PRs, release notes, migrations, new data fields or vendors | Does the change preserve compliance; does it introduce new processing? |
+| Stage                           | Primary artefacts                                                                                                     | Audit focus                                                                                                                                                                       |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Requirements / discovery**    | requirements, user stories, acceptance criteria, process and data-flow descriptions, business case, RFP, data sources | Is the *planned* processing lawful, necessary and proportionate? What privacy requirements must be added (notice, consent, retention, access/correction, cross-border, security)? |
+| **Design / architecture**       | architecture and data models, API contracts, IaC plans, vendor/subprocessor selection, threat model, DPIA draft       | Are the required controls *designed in* (minimisation, security, retention, DPbD)?                                                                                                |
+| **Development / build**         | code, config, migrations, tests, CI checks                                                                            | Are the designed and required controls *actually implemented*?                                                                                                                    |
+| **Pre-release / readiness**     | release checklist, published notices, runbooks, training                                                              | Can the entity meet its obligations from day one?                                                                                                                                 |
+| **Post-deployment / operation** | logs, access reviews, data-subject-request records, breach register, retention jobs, monitoring, training records     | Do the controls *operate effectively* over time?                                                                                                                                  |
+| **Change / update**             | change requests, PRs, release notes, migrations, new data fields or vendors                                           | Does the change preserve compliance; does it introduce new processing?                                                                                                            |
 
 An audit may cover one stage (e.g. a requirements review, a pre-release readiness
 check, a change impact audit) or several. State which stages are in scope and which
@@ -243,6 +243,7 @@ method and rating scales are in `references/audit.md`.
 ## 8. Bundled references
 
 **Method and templates**
+
 - `references/audit.md` — audit methodology, ratings, findings and report structure.
 - `references/legislation-status.md` — last-checked/updated dates per instrument.
 - `assets/audit-report-template.md` — fill-in audit report.
@@ -250,6 +251,7 @@ method and rating scales are in `references/audit.md`.
   and GDPR Art 13/14.
 
 **Australia** — see `references/australia/README.md` for orientation.
+
 - `scope.md` — coverage, definitions, exemptions and permitted situations.
 - `apps.md` — APP 1 to APP 13 clause-by-clause checklist.
 - `privacy-policy.md` — APP privacy policy requirements and drafting checklist.
@@ -258,6 +260,7 @@ method and rating scales are in `references/audit.md`.
 - `statutory-tort.md` — Schedule 2 serious invasions of privacy.
 
 **European Union**
+
 - `references/eu/gdpr.md` — principles, lawful bases, rights, obligations, transfers, fines.
 - `references/eu/privacy-notice.md` — GDPR Art 12–14 notice content and checklist.
 - `references/eu/audit-checklist.md` — GDPR/AI Act/Data Act audit procedures.
@@ -265,6 +268,7 @@ method and rating scales are in `references/audit.md`.
 - `references/eu/data-act.md` — data access/sharing, cloud switching, government access.
 
 **USA / California** — see `references/usa/README.md` for orientation.
+
 - `references/usa/ccpa.md` — CCPA obligations: collection limits, rights, notices,
   contracts, security, ADMT, cybersecurity audits, risk assessments, enforcement.
 - `references/usa/privacy-policy.md` — required CCPA disclosures and policy content.
