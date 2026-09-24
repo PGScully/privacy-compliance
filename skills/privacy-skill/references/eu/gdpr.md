@@ -2,7 +2,7 @@
 
 General Data Protection Regulation. Full text: [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 Cite as **GDPR Art N** (e.g. GDPR Art 6(1)(a)), and note recital support where
-useful.
+useful. Last checked/updated: see [`legislation-status.md`](../legislation-status.md).
 
 ## 1. Applicability
 

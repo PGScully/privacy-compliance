@@ -38,7 +38,9 @@ review under each and report overlapping findings once, citing both.
 The references summarise each instrument and cite the exact provisions. **This
 package does not ship the full statutes** (to keep it small). Use the official
 texts linked above to quote or verify a provision when a point is contested or
-high-stakes. When in doubt about which regime applies, state the assumption.
+high-stakes. Per-instrument last-checked and last-updated dates are recorded in
+`references/legislation-status.md`. When in doubt about which regime applies, state
+the assumption.
 
 ## 2. Task A — review workflow
 
@@ -242,6 +244,7 @@ method and rating scales are in `references/audit.md`.
 
 **Method and templates**
 - `references/audit.md` — audit methodology, ratings, findings and report structure.
+- `references/legislation-status.md` — last-checked/updated dates per instrument.
 - `assets/audit-report-template.md` — fill-in audit report.
 - `assets/privacy-policy-template.md` — fill-in policy template mapped to APP 1.4
   and GDPR Art 13/14.

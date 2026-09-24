@@ -4,6 +4,7 @@ The AI Act is a product-safety/fundamental-rights regulation for AI, not a priva
 law — but it is a core part of a privacy review because several obligations turn on
 personal data, biometrics and fundamental rights. Full text:
 [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj). Cite as **AI Act Art N**.
+Last checked/updated: see [`legislation-status.md`](../legislation-status.md).
 
 ## 1. Scope and relationship to privacy law
 

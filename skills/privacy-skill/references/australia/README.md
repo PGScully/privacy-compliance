@@ -4,6 +4,9 @@ Statute text: [Privacy Act 1988](https://www.legislation.gov.au/C2004A03712/late
 (compilation No. 104, 4 June 2026, includes Act No. 75, 2025). Cite as
 **Privacy Act 1988 (Cth)** with the section, APP clause or Schedule clause.
 
+Last checked / last updated for this instrument: see
+[`legislation-status.md`](../legislation-status.md).
+
 Read the references in this order:
 
 1. **`scope.md`** — is the entity covered? Definitions of personal and sensitive

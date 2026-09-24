@@ -12,7 +12,9 @@ lifecycle: requirements gathering, implementation, and post-deployment operation
 README.md                              Project overview and requirements
 AGENTS.md                              Agent instructions for this repo
 .pi/settings.json                      Registers skills/ for pi discovery
+scripts/check-legislation.py           Update detector for tracked legislation
 legislation/                           Original source legislation (not uploaded)
+  sources.json                         Per-instrument provenance and fingerprints
   Australia/Privacy Act 1988.txt       Australian statute text
   Europe/GDPR/                         GDPR text + source PDF
   Europe/AI Act/                       AI Act text + source PDF
@@ -28,6 +30,7 @@ skills/
       audit-report-template.md         Fill-in audit report
     references/                        Review, audit and drafting references
       audit.md                         Audit methodology, ratings and reporting
+      legislation-status.md            Generated: last checked/updated per instrument
       australia/                       AU Privacy Act 1988
         README.md                      Orientation and citation summary
         scope.md                       Coverage, definitions, exemptions
@@ -99,6 +102,34 @@ pdftotext -layout "legislation/Europe/GDPR/CELEX_32016R0679_EN_TXT.pdf" \
 
 Keep the extracted `.txt` alongside the source PDF in the top-level `legislation/`.
 The text stays in the top-level directory — do **not** copy it into the package.
+
+## Keeping legislation current
+
+`legislation/sources.json` records, per instrument, the official URL, the local text
+path, the SHA-256 of the normalised official text, the `last_checked` / `last_updated`
+dates and the current status. `scripts/check-legislation.py` fetches each source,
+compares the fingerprint and refreshes the manifest and the generated status table.
+
+```sh
+python scripts/check-legislation.py           # report; exit code 2 if anything changed
+python scripts/check-legislation.py --write   # refresh timestamps and status tables
+python scripts/check-legislation.py --accept  # accept the fetched text as the new baseline
+python scripts/check-legislation.py --offline # no network; rebuild tables only
+```
+
+The generated status table appears (between `legislation-status` markers) in
+the root `README.md` and in `skills/privacy-skill/references/legislation-status.md`.
+Never hand-edit between the markers. When a check reports an update, review the
+official text, update the top-level text and the affected reference, then run with
+`--accept`.
+
+Notes:
+
+- Detection fingerprints the normalised visible text, so markup/asset churn is
+  ignored; a reported change still needs human confirmation.
+- The script is maintainer tooling at the repository root and is **not** shipped in
+the skill package.
+- First run against a newly added source records the baseline automatically.
 
 ## Notes
 
