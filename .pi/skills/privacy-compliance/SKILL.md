@@ -1,5 +1,5 @@
 ---
-name: privacy-skills
+name: privacy-compliance
 description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act, and the California CCPA and its regulations. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing requirements, designs, code or documentation at any lifecycle stage; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product, ad-tech and cloud features. Produces findings, audit reports or policy drafts that name the legislation and cite the relevant section, article or APP clause.
 license: MIT
 ---

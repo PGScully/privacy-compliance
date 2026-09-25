@@ -5,7 +5,7 @@ For every source in legislation/sources.json it fetches the official text page,
 fingerprints the *normalised visible text* (SHA-256), and compares it with the
 recorded fingerprint. It then reports one status per instrument and, with
 --write, updates the manifest and the human-readable status table in
-skills/privacy-skills/references/legislation-status.md.
+skills/privacy-compliance/references/legislation-status.md.
 
 Detection is best-effort: official pages can change for formatting or navigation
 reasons, and a change in fingerprint means "review the official text", not
@@ -34,10 +34,10 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = REPO_ROOT / "legislation" / "sources.json"
-STATUS_FILE = REPO_ROOT / "skills" / "privacy-skills" / "references" / "legislation-status.md"
+STATUS_FILE = REPO_ROOT / "skills" / "privacy-compliance" / "references" / "legislation-status.md"
 # Files that carry a generated status table between the markers.
 STATUS_TARGETS = [STATUS_FILE, REPO_ROOT / "README.md"]
-USER_AGENT = "privacy-skills-legislation-check/1.0 (+https://github.com/)"
+USER_AGENT = "privacy-compliance-legislation-check/1.0 (+https://github.com/)"
 
 START_MARKER = "<!-- legislation-status:start -->"
 END_MARKER = "<!-- legislation-status:end -->"

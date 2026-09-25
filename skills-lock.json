@@ -1,11 +1,11 @@
 {
   "version": 1,
   "skills": {
-    "privacy-skills": {
+    "privacy-compliance": {
       "source": "PGScully/privacy-skill",
       "ref": "main",
       "sourceType": "github",
-      "skillPath": "skills/privacy-skills/SKILL.md",
+      "skillPath": "skills/privacy-compliance/SKILL.md",
       "computedHash": "c5e187e9a675aaeeea88b8ae81d7a1b369df90bf96dbde8efaed81fe753d2c2d"
     }
   }

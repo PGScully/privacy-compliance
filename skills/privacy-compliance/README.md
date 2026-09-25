@@ -1,4 +1,4 @@
-# privacy-skills
+# privacy-compliance
 
 A portable [Agent Skills](https://agentskills.io/specification) package that helps
 coding assistants **review** software, designs, data flows and policies for privacy
@@ -61,7 +61,7 @@ agent scans for skills:
 - Other agents: point their skills location at this directory.
 
 Once discovered, the skill is selectable automatically and/or invokable as
-`/skill:privacy-skills`.
+`/skill:privacy-compliance`.
 
 ## Use
 

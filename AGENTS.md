@@ -21,7 +21,7 @@ legislation/                           Original source legislation (not uploaded
   Europe/Data Act/                     Data Act text + source PDF
   USA/California/                      CCPA statute and regulations text + source PDFs
 skills/
-  privacy-skills/                       Self-contained, uploadable skill package
+  privacy-compliance/                   Self-contained, uploadable skill package
     SKILL.md                           Agent Skills entry point (routing, workflow, output)
     README.md                          Package documentation and install/use
     LICENSE
@@ -65,7 +65,7 @@ official online texts; this keeps the installed skill small (currently ~200 KB).
 ## Adding legislation
 
 Place the original text in the top-level `legislation/<Jurisdiction>/`, add a matching
-reference under `skills/privacy-skills/references/<jurisdiction>/`, link it from
+reference under `skills/privacy-compliance/references/<jurisdiction>/`, link it from
 `SKILL.md`, and add the **official online link** to the jurisdiction table. Do not
 copy the full statute text into the package. Keep the top-level `legislation/` as the
 authoritative source for text extraction and quotation.
@@ -77,9 +77,9 @@ sub-folders for each jurisdiction.
 
 - Each skill is packaged in its own directory under `skills/`, ready to upload to a
   skills repository as-is.
-- Entry point is `skills/privacy-skills/SKILL.md`, written to the Agent Skills spec so
+- Entry point is `skills/privacy-compliance/SKILL.md`, written to the Agent Skills spec so
   it works across agents (Claude, Codex, Deepseek, pi, ...).
-- Per-jurisdiction detail lives under `skills/privacy-skills/references/<jurisdiction>/`.
+- Per-jurisdiction detail lives under `skills/privacy-compliance/references/<jurisdiction>/`.
 - The skill routes by jurisdiction and cites the exact provision for every finding.
 - The skill has three capabilities: **review** (flag issues), **audit** (rate every
   control against a defined scope and produce a report), and **draft a privacy
@@ -118,7 +118,7 @@ python scripts/check-legislation.py --offline # no network; rebuild tables only
 ```
 
 The generated status table appears (between `legislation-status` markers) in
-the root `README.md` and in `skills/privacy-skills/references/legislation-status.md`.
+the root `README.md` and in `skills/privacy-compliance/references/legislation-status.md`.
 Never hand-edit between the markers. When a check reports an update, review the
 official text, update the top-level text and the affected reference, then run with
 `--accept`.
