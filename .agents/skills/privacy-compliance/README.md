@@ -53,8 +53,19 @@ provision.
 
 ## Install
 
-Copy this directory (or the repository's `skills/` directory) into a location your
-agent scans for skills:
+Install with the [Agent Skills CLI](https://github.com/vercel-labs/skills):
+
+```sh
+npx skills add PGScully/privacy-compliance
+```
+
+Add `-g` to install for your user rather than the current project, or `-a '*'` to
+target every detected agent.
+
+### Manual installation
+
+Alternatively, copy this directory (or the repository's `skills/` directory) into a
+location your agent scans for skills:
 
 - Agent Skills standard: `.agents/skills/` (project) or `~/.agents/skills/` (user).
 - pi: add the directory to the `skills` setting, or use `--skill <path>`.

@@ -38,8 +38,16 @@ The package covers:
 ## Using the skill
 
 See [`skills/privacy-compliance/README.md`](skills/privacy-compliance/README.md) for full
-install and usage instructions. In short, place
-`skills/privacy-compliance/` where your agent discovers skills:
+install and usage instructions.
+
+Install with the [Agent Skills CLI](https://github.com/vercel-labs/skills):
+
+```sh
+npx skills add PGScully/privacy-compliance
+```
+
+Or install manually by placing `skills/privacy-compliance/` where your agent discovers
+skills:
 
 - Agent Skills standard: `.agents/skills/` (project) or `~/.agents/skills/` (user).
 - pi: running pi from this repository discovers it automatically — the project
