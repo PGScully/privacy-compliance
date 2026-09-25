@@ -2,7 +2,7 @@
 
 ## Project
 
-**Privacy Skill** — a skill for coding assistants that surfaces privacy concerns derived
+**Privacy Compliance** — a skill for coding assistants that surfaces privacy concerns derived
 from privacy legislation. The skill is meant to apply across the whole development
 lifecycle: requirements gathering, implementation, and post-deployment operation.
 

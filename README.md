@@ -1,6 +1,6 @@
-# Privacy Skill
+# Privacy Compliance
 
-A privacy skill for coding assistants, derived from privacy legislation. The
+A privacy-compliance skill for coding assistants, derived from privacy legislation. The
 skill reviews software, designs, data flows and policies for privacy and
 data-protection compliance, flags issues with citations to the relevant provision,
 audits code and documentation against a defined scope, and drafts or updates privacy
