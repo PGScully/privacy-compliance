@@ -1,6 +1,6 @@
 ---
 name: privacy-skills
-description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act, and the California CCPA and its regulations. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing requirements, designs, code or documentation at any lifecycle stage; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product, ad-tech and cloud features. Produces findings, audit reports or policy drafts that cite the relevant section, article or APP clause.
+description: Review, audit and draft privacy and data-protection compliance artefacts across jurisdictions - the Australian Privacy Act 1988 and its 13 Australian Privacy Principles, the EU GDPR, the EU AI Act and the EU Data Act, and the California CCPA and its regulations. Use when handling personal or sensitive data, designing collection, storage, sharing, retention or deletion; auditing requirements, designs, code or documentation at any lifecycle stage; creating privacy policies, notices or consent flows; assessing cross-border transfers; planning for or responding to data breaches; or reviewing AI, connected-product, ad-tech and cloud features. Produces findings, audit reports or policy drafts that name the legislation and cite the relevant section, article or APP clause.
 license: MIT
 ---
 
@@ -58,7 +58,8 @@ from applying an obligation that does not apply.
    disclose/share, transfer, retain, destroy — check the corresponding obligation.
 4. **Check the special regimes** where relevant: breaches, impact assessments, AI
    risk classification, and government-access safeguards.
-5. **Report findings** in the format below, each with a citation and severity.
+5. **Report findings** in the format below, each naming the legislation and
+   citing the provision, with a severity.
 
 ## 3. Severity
 
@@ -72,11 +73,28 @@ from applying an obligation that does not apply.
 
 ## 4. Output format
 
+**Citation convention.** Every citation names the legislation *and* the provision —
+never a bare `Art 6(1)(a)`, `s 26WE` or `§ 7013`. Name the instrument with its
+official identifier on first use, then use the accepted abbreviation:
+
+| Instrument                       | Cite as                                                                                  |
+| -------------------------------- | ---------------------------------------------------------------------------------------- |
+| AU Privacy Act 1988 (Cth)        | `Privacy Act 1988 (Cth) s 16C`; `Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1)`         |
+| EU GDPR (Regulation (EU) 2016/679)   | `GDPR Art 6(1)(a)` (first use: `GDPR (Regulation (EU) 2016/679) Art 6(1)(a)`)         |
+| EU AI Act (Regulation (EU) 2024/1689) | `AI Act Art 5(1)(f)` (first use: `AI Act (Regulation (EU) 2024/1689) Art 5(1)(f)`)    |
+| EU Data Act (Regulation (EU) 2023/2854) | `Data Act Art 4(12)` (first use: `Data Act (Regulation (EU) 2023/2854) Art 4(12)`)    |
+| California CCPA                  | `CCPA § 1798.120`                                                                        |
+| CCPA Regulations (11 CCR)        | `CCPA Regs § 7013(c)(1)`                                                                  |
+
+Cite to the finest useful granularity (article, paragraph, point, section, clause).
+If several instruments apply to one finding, cite each separately — e.g.
+`GDPR Art 6(1)(a); Privacy Act 1988 (Cth) APP 3.3`.
+
 ```
 ### [Severity] Short title
 - **Issue:** what is wrong or risky.
 - **Location:** file:line, component, design section or policy paragraph.
-- **Obligation:** exact provision(s), e.g. APP 11.1 (Privacy Act 1988 (Cth) Sch 1 cl 11.1); GDPR Art 6(1)(a); AI Act Art 5(1)(f); Data Act Art 4(12).
+- **Obligation:** exact provision(s), naming the legislation, e.g. Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1); GDPR Art 6(1)(a); AI Act Art 5(1)(f); Data Act Art 4(12); CCPA § 1798.120; CCPA Regs § 7013(c)(1).
 - **Why it applies:** tie the facts to the provision, including the regime, data class and any exemption/exclusion considered.
 - **Recommendation:** a concrete, testable change.
 ```
@@ -101,8 +119,8 @@ counsel).
 | Incident response / breach runbooks                                              | AU Part IIIC (s 26WE, 26WH, 26WK, 26WL); GDPR Art 33–34                                                                                                                      |
 | Connected products / IoT / cloud                                                 | Data Act Art 3–6, 30–32; GDPR Art 6, 20                                                                                                                                      |
 | Public-body data requests                                                        | Data Act Art 14–18; GDPR Art 6(1)(e)                                                                                                                                         |
-| Selling/sharing data, ad tech, "Do Not Sell or Share"                            | CCPA §§ 1798.120, 1798.135; Regs §§ 7013, 7025–7026                                                                                                                          |
-| Sensitive personal information                                                   | CCPA § 1798.121; Regs §§ 7014, 7027                                                                                                                                          |
+| Selling/sharing data, ad tech, "Do Not Sell or Share"                            | CCPA §§ 1798.120, 1798.135; CCPA Regs §§ 7013, 7025–7026                                                                                                                          |
+| Sensitive personal information                                                   | CCPA § 1798.121; CCPA Regs §§ 7014, 7027                                                                                                                                          |
 | Automated decisions / profiling / scoring                                        | CCPA Regs §§ 7200, 7220–7222 (ADMT); § 7150 (risk assessment); AI Act Art 5/6; GDPR Art 22                                                                                   |
 | Writing or updating a privacy policy                                             | `references/australia/privacy-policy.md`, `references/eu/privacy-notice.md`, `references/usa/privacy-policy.md`, `assets/privacy-policy-template.md`                         |
 | Auditing at any lifecycle stage (requirements, design, build, operation, change) | `references/audit.md`, `references/australia/audit-checklist.md`, `references/eu/audit-checklist.md`, `references/usa/audit-checklist.md`, `assets/audit-report-template.md` |
@@ -122,7 +140,7 @@ invent facts — record unknowns as open questions.
 - Data: categories of personal information, and separately sensitive/
   special-category data.
 - Collection: sources (direct, third parties, automatic) and means.
-- Purposes and the **legal basis** for each (EU Art 6; and whether reliance is on
+- Purposes and the **legal basis** for each (GDPR Art 6; and whether reliance is on
   consent or legitimate interests).
 - Recipients and categories of recipients.
 - Overseas disclosures/transfers: countries and safeguards.
@@ -133,19 +151,20 @@ invent facts — record unknowns as open questions.
 ### 6.2 Draft
 
 Start from `assets/privacy-policy-template.md` and fill it in. Keep it concise,
-plain-language and up to date (AU APP 1.3; EU Art 12). Delete inapplicable
+plain-language and up to date (Privacy Act 1988 (Cth) APP 1.3; GDPR Art 12). Delete
+inapplicable
 sections and remove the annotations before returning the final text.
 
 Consult the jurisdiction requirement checklists while drafting:
 
 - Australia — `references/australia/privacy-policy.md` (required contents in
   **APP 1.4**, collection-notice matters in **APP 5.2**, cross-border in **APP 8**).
-- EU — `references/eu/privacy-notice.md` (transparency in **Art 12**, content for
-  data collected from the subject in **Art 13**, from other sources in **Art 14**,
-  plus Art 8, 21, 22, 26, 27, 37 and AI Act Art 50).
+- EU — `references/eu/privacy-notice.md` (transparency in **GDPR Art 12**, content
+  for data collected from the subject in **GDPR Art 13**, from other sources in
+  **GDPR Art 14**, plus GDPR Art 8, 21, 22, 26, 27, 37 and AI Act Art 50).
 - USA / California — `references/usa/privacy-policy.md` (privacy policy and
   Notice at Collection content, opt-out/limit/financial-incentive notices, and the
-  ADMT Pre-use Notice under Regs §§ 7011–7016, 7220).
+  ADMT Pre-use Notice under CCPA Regs §§ 7011–7016, 7220).
 
 Where more than one applies, produce a combined or layered notice that satisfies
 all of them, with clearly separated jurisdiction sections where the wording
@@ -155,9 +174,9 @@ differs.
 
 Return, after the draft:
 
-1. **Coverage check** — a table mapping each required element (APP 1.4(a)–(g);
-   GDPR Art 13(1)–(2) / Art 14; CCPA Regs § 7011(e) / § 7012(e)) to the section of
-   the draft that satisfies it.
+1. **Coverage check** — a table mapping each required element (Privacy Act 1988 (Cth)
+   APP 1.4(a)–(g); GDPR Art 13(1)–(2) / Art 14; CCPA Regs § 7011(e) / § 7012(e)) to the
+   section of the draft that satisfies it.
 2. **Gaps and open questions** — every placeholder or assumed fact that must be
    confirmed before publishing.
 3. **Publication checklist** — dated and versioned, available free of charge and in

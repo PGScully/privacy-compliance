@@ -131,7 +131,8 @@ leave controls unaddressed.
 ```
 ### [Severity] Short title
 - **Stage:** requirements / design / build / pre-release / operation / change.
-- **Criteria:** the provision breached, e.g. APP 11.1; GDPR Art 32; AI Act Art 26(7).
+- **Criteria:** the provision breached, naming the legislation, e.g.
+  Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1); GDPR Art 32; AI Act Art 26(7).
 - **Condition:** what actually exists (or is planned, at pre-code stages).
 - **Evidence:** file:line / config path / document section / requirement ID.
 - **Cause:** why it exists (design, omission, drift, unclear ownership).
@@ -163,7 +164,7 @@ can re-perform the audit:
 
 | ID | Control | Evidence | Location | Result |
 |---|---|---|---|---|
-| [E1] | [APP 11.1] | [encryption config] | [path/to/config] | Conforms |
+| [E1] | [Privacy Act 1988 (Cth) APP 11.1] | [encryption config] | [path/to/config] | Conforms |
 
 ## 8. Limitations
 

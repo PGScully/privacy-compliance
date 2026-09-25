@@ -33,7 +33,7 @@ significant issues.]
 
 | # | Severity | Finding | Provision |
 |---|---|---|---|
-| 1 | [Critical] | [short title] | [APP 11.1] |
+| 1 | [Critical] | [short title] | [Privacy Act 1988 (Cth) APP 11.1] |
 
 ## 3. Summary of findings
 
@@ -63,7 +63,7 @@ significant issues.]
 ### [Critical] [Short title]
 
 - **Stage:** [requirements / design / build / pre-release / operation / change]
-- **Criteria:** [provision, e.g. APP 11.1; GDPR Art 32]
+- **Criteria:** [provision naming the legislation, e.g. Privacy Act 1988 (Cth) Sch 1 cl 11.1 (APP 11.1); GDPR Art 32; CCPA Regs § 7013(c)(1)]
 - **Condition:** [what actually exists, or is planned at pre-code stages]
 - **Evidence:** [file:line / config path / document section / requirement ID]
 - **Cause:** [why it exists]
@@ -77,7 +77,7 @@ significant issues.]
 
 | Ref | Control question | Result | Evidence | Notes |
 |---|---|---|---|---|
-| [APP 1.3] | [Up-to-date privacy policy] | [Conforms] | [E1] | |
+| [Privacy Act 1988 (Cth) APP 1.3] | [Up-to-date privacy policy] | [Conforms] | [E1] | |
 
 ## 6. Limitations
 
@@ -96,7 +96,7 @@ significant issues.]
 
 | ID | Control | Evidence | Location | Result |
 |---|---|---|---|---|
-| [E1] | [APP 1.3] | [policy document] | [path/URL] | [Conforms] |
+| [E1] | [Privacy Act 1988 (Cth) APP 1.3] | [policy document] | [path/URL] | [Conforms] |
 
 ### 7.2 Documents reviewed
 
